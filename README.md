@@ -26,10 +26,10 @@ Os códigos fontes necessários estão disponíveis em:
 
 
 
-##PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
+## PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
 80, 8080, 8081, 22, 5432, 9000, 587 e 25  
 
-##Instalando o MINIO ([download here](https://min.io/))
+## Instalando o MINIO ([download here](https://min.io/))
 sudo mkdir /minio
 sudo chmod 777 /minio
 cd /minio
