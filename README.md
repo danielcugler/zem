@@ -2,13 +2,13 @@
 ![](zem-about.png)
 [Vídeo sobre o projeto](https://www.youtube.com/watch?v=lrHPzcIGjq0&t=1s)
 
-**Chamada Pública** : Chamada CNPq-SETEC/MEC No 17/2014 - [Acesse o edital aqui](Edital-ChamadaCNPq-SETEC-MEC-17-2014.pdf)
+**Chamada Pública**: Chamada CNPq-SETEC/MEC No 17/2014 - [Acesse o edital aqui](Edital-ChamadaCNPq-SETEC-MEC-17-2014.pdf)
 
 **Processo** : 468005/2014-5
 
-**Coordenador do Projeto** : Daniel Cintra Cugler
+**Coordenador do Projeto**: Daniel Cintra Cugler. Este projeto foi co-coordenado pelas pesquisadoras Jaqueline Aparecida Jorge Papini Soares e Lídia Bononi Paiva Tomaz
 
-Este projeto foi co-coordenado pelas pesquisadoras Jaqueline Aparecida Jorge Papini Soares e Lídia Bononi Paiva Tomaz, no IFTM, Instituto Federal do Triângulo Mineiro, *campus* Patrocínio/MG.
+**Instituição executora**: IFTM, Instituto Federal do Triângulo Mineiro, *campus* Patrocínio/MG.
 
 O código fonte do projeto pode ser utilizado desde que sejam seguidas as normas do CNPq ([vide edital](Edital-ChamadaCNPq-SETEC-MEC-17-2014.pdf))
 
@@ -30,7 +30,7 @@ Cidadãos podem utilizar tanto a app mobile quanto o módulo web para abrir cham
 ## PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
 80, 8080, 8081, 22, 5432, 9000, 587 e 25  
 
-## Instalando o MINIO ([download here](https://min.io/))
+## Instalando o MINIO ([download aqui](https://min.io/))
 sudo mkdir /minio
 sudo chmod 777 /minio
 cd /minio
