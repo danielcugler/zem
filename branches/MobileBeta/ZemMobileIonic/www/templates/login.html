@@ -1,0 +1,30 @@
+<ion-view style="" class=" " id="page2" title="Login" hide-nav-bar="true" ng-controller="loginCtrl">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/2coi49VNTsyxFRe7abMD_login-logo.png" height="auto" width="40%">
+        </div>
+        <div style="width: 283px; height: 45px;" class="spacer"></div>
+        <p class=" " style="color: rgb(0, 0, 0); text-align: center;" id="login-markdown1">Entre com sua conta ZEM</p>
+        <form style="" class="list " id="login-form1" name="form" novalidate="true">
+            <ion-list style="" class=" " id="login-list1">
+                <label style="" name="cEmail" id="login-input1" class="item item-input " ng-class="{'has-error' : form.email.$invalid && enviado}">
+                    <input placeholder="Email" type="email" name="email" ng-model="user.username" ng-maxlength="40" ng-required="true">
+                    <div class="padding">
+                        <p style="color:red" ng-show="form.email.$error.required && enviado ">Este campo é obrigatório</p>
+                        <p style="color:red" ng-show="form.email.$error.email && enviado ">Email inválido</p>
+                    </div>
+                </label>
+                <label style="" name="cSenha" id="login-input2" class="item item-input " ng-class="{'has-error' : form.senha.$invalid && enviado}">
+                    <input placeholder="Senha" type="password" ng-model="user.password" name="senha" ng-minlength="5" ng-maxlength="12" ng-required="true">
+                    <div class="padding">
+                        <p style="color:red" ng-show="form.senha.$error.required && enviado ">Este campo é obrigatório</p>
+                        <p style="color:red" ng-show="form.senha.$error.maxlength && enviado ">Máximo 12 caracteres</p>
+                        <p style="color:red" ng-show="form.senha.$error.minlength && enviado ">Mínimo 8 caracteres</p>
+                    </div>
+                </label>
+            </ion-list>
+            <button class=" button button-balanced  button-block icon ion-checkmark " id="login-button6" ng-click="login(user, form)"></button>
+        </form>
+        <a class=" button button-positive  button-block button-clear " id="zEMZeladoriaMunicipal-button10" ng-click="forgotPassword()">Esqueceu sua senha?</a>
+    </ion-content>
+</ion-view>

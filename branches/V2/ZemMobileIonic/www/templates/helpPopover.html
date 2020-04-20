@@ -1,0 +1,7 @@
+<div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+    <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+        <ion-slide ng-repeat="image in photosTeste">
+            <img ng-src="{{image}}" class="fullscreen-image fullscreen-imageHelp" />
+        </ion-slide>
+    </ion-slide-box>
+</div>

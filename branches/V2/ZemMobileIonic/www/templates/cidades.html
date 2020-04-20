@@ -1,0 +1,9 @@
+<ion-view style="" id="page6" title="Cidades">
+    <ion-content class="has-header" padding="true">
+        <ion-list class="card">
+            <ion-item collection-repeat="cidade in cidades" ng-click="setCity(cidade)">
+                {{cidade.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

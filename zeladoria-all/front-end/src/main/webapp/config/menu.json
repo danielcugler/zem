@@ -1,0 +1,37 @@
+var data={	
+	menu: [
+		{name: 'Chamados', link: 'javascript:void(0);', icon:'icon-bell-1', role:['ROLE_CALL_READ', 'ROLE_FOLLOWCALL_READ'], sub: [
+			{name: 'Moderação de Chamados',link: '../call.jsp', icon:null, role:['ROLE_CALL_READ'], sub: null},
+
+			{name: 'Acompanhamento de Chamados',link: '../callfollow.jsp', icon:null, role:['ROLE_FOLLOWCALL_READ'], sub: null},
+			
+			{name: 'Monitor de Chamados',link: 'callmonitor.jsp', icon:null, role:['ROLE_FOLLOWCALL_READ'], sub: null},
+			
+			{name: 'Chamados Internos', link: '../internalcall.jsp', icon:'fa fa-comment', role:['ROLE_INTERNALCALL_READ'], sub: null}
+
+		]},		
+		
+		{name: 'Cidadãos', link: '../citizen.jsp', icon:'fa fa-group', role:['ROLE_CITIZEN_READ'], sub: null},
+		
+		{name: 'Comunicados em Massa', link: '../broadcastmessage.jsp', icon:'icon-megaphone', role:['ROLE_COMMUNICATION_READ'], sub: null},
+		
+		{name: 'Gerenciar Entidades', link: 'javascript:void(0);', icon:'fa fa-bars', role: ['ROLE_ENTITY_READ', 'ROLE_ENTITYCATEGORY_READ'], sub: [
+
+			{name: 'Entidades', link: '../entity.jsp', icon:null, role:['ROLE_ENTITY_READ'], sub: null},
+
+			{name: 'Categorias de Entidade', link: '../entitycategory.jsp', icon:null, role:['ROLE_ENTITYCATEGORY_READ'], sub: null}            
+		]},
+		
+		{name: 'Log de Operações', link: '../log.jsp', icon:'icon-database', role:['ROLE_LOG_READ'], sub: null},  
+
+		{name: 'Modelos de Mensagem', link: '../messagemodel.jsp', icon:'fa fa-envelope-o', role:['ROLE_MESSAGEMODEL_READ'], sub: null},
+
+		{name: 'Perfis', link: '../sup.jsp', icon:'icon-vcard', role:['ROLE_PROFILE_READ'], sub: null},  
+		
+		{name: 'Relatórios', link: '../report.jsp', icon:'icon-docs', role:['ROLE_REPORT_READ'], sub: null},
+				
+		{name: 'Usuários', link: '../user.jsp', icon:'fa fa-user', role:['ROLE_USER_READ'], sub: null},
+		
+		{name: 'Bairros', link: '../bairros.jsp', icon:'fa fa-home', role:['ROLE_NEIGHBORHOOD_READ'], sub: null}				  
+	]
+};

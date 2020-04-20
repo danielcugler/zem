@@ -1,0 +1,58 @@
+2017-04-26 13:33:53 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.10.Final}
+2017-04-26 13:33:53 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-04-26 13:33:53 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-04-26 13:33:53 [main] WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-04-26 13:33:53 [main] INFO  pooling:126 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://45.55.90.37:5432/zem]
+2017-04-26 13:33:53 [main] INFO  pooling:135 - HHH10001001: Connection properties: {user=postgres, password=****, autocommit=true}
+2017-04-26 13:33:53 [main] INFO  pooling:140 - HHH10001003: Autocommit mode: true
+2017-04-26 13:33:53 [main] INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2017-04-26 13:33:54 [main] INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2017-04-26 13:35:00 [main] INFO  LobCreatorBuilderImpl:124 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-04-26 13:35:00 [main] INFO  BasicTypeRegistry:148 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@56928307
+2017-04-26 13:35:01 [main] INFO  Version:17 - HV000001: Hibernate Validator 5.2.0.Beta1
+2017-04-26 13:35:02 [main] INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-04-26 13:35:02 [main] WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-04-26 13:40:16 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.10.Final}
+2017-04-26 13:40:16 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-04-26 13:40:16 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-04-26 13:40:16 [main] WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-04-26 13:40:16 [main] INFO  pooling:126 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://45.55.90.37:5432/zem]
+2017-04-26 13:40:16 [main] INFO  pooling:135 - HHH10001001: Connection properties: {user=postgres, password=****, autocommit=true}
+2017-04-26 13:40:16 [main] INFO  pooling:140 - HHH10001003: Autocommit mode: true
+2017-04-26 13:40:16 [main] INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2017-04-26 13:40:17 [main] INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2017-04-26 13:41:24 [main] INFO  LobCreatorBuilderImpl:124 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-04-26 13:41:24 [main] INFO  BasicTypeRegistry:148 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1603cd68
+2017-04-26 13:41:24 [main] INFO  Version:17 - HV000001: Hibernate Validator 5.2.0.Beta1
+2017-04-26 13:41:25 [main] INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-04-26 13:41:26 [main] WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2017-05-03 09:33:29 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.10.Final}
+2017-05-03 09:33:29 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-05-03 09:33:29 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-05-03 09:33:29 [main] WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 09:33:29 [main] INFO  pooling:126 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/zem]
+2017-05-03 09:33:29 [main] INFO  pooling:135 - HHH10001001: Connection properties: {user=postgres, password=****, autocommit=true}
+2017-05-03 09:33:29 [main] INFO  pooling:140 - HHH10001003: Autocommit mode: true
+2017-05-03 09:33:29 [main] INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2017-05-03 09:34:40 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.10.Final}
+2017-05-03 09:34:40 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-05-03 09:34:40 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-05-03 09:34:41 [main] WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 09:34:41 [main] INFO  pooling:126 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://55.45.90.37:5432/zem]
+2017-05-03 09:34:41 [main] INFO  pooling:135 - HHH10001001: Connection properties: {user=postgres, password=****, autocommit=true}
+2017-05-03 09:34:41 [main] INFO  pooling:140 - HHH10001003: Autocommit mode: true
+2017-05-03 09:34:41 [main] INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2017-05-03 09:35:10 [main] INFO  Version:45 - HHH000412: Hibernate Core {5.2.10.Final}
+2017-05-03 09:35:10 [main] INFO  Environment:213 - HHH000206: hibernate.properties not found
+2017-05-03 09:35:10 [main] INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-05-03 09:35:10 [main] WARN  pooling:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2017-05-03 09:35:10 [main] INFO  pooling:126 - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://45.55.90.37:5432/zem]
+2017-05-03 09:35:10 [main] INFO  pooling:135 - HHH10001001: Connection properties: {user=postgres, password=****, autocommit=true}
+2017-05-03 09:35:10 [main] INFO  pooling:140 - HHH10001003: Autocommit mode: true
+2017-05-03 09:35:10 [main] INFO  DriverManagerConnectionProviderImpl:41 - HHH000115: Hibernate connection pool size: 10 (min=1)
+2017-05-03 09:35:11 [main] INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2017-05-03 09:36:23 [main] INFO  LobCreatorBuilderImpl:124 - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2017-05-03 09:36:23 [main] INFO  BasicTypeRegistry:148 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1603cd68
+2017-05-03 09:36:23 [main] INFO  Version:17 - HV000001: Hibernate Validator 5.2.0.Beta1
+2017-05-03 09:36:25 [main] INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-05-03 09:36:25 [main] WARN  deprecation:1811 - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead

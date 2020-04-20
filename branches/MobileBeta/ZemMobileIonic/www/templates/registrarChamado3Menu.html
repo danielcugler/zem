@@ -1,0 +1,14 @@
+<ion-view style="" class=" " id="page9" title="Registrar Chamado">
+    <ion-content class="has-header" padding="true">
+        <h4 class=" " style="color: rgb(0, 0, 0);" id="registrarChamado3-heading3">Quero direcionar para:</h4>
+        <ion-list class=" " id="registrarChamado3-list10" ng-repeat="entity in entities">
+            <ion-item class="item-stable item-icon-left" ng-click="toggleGroup(entity)" ng-class="{active: isGroupShown(entity)}">
+                <!-- <i ng-class="isGroupShown(entity) ? 'ion-minus' : 'ion-plus'"></i> -->
+                <i class="icon" ng-class="viewIcon(entity)" style="color: #47b68d;"></i> &nbsp; {{entity.name}}
+            </ion-item>
+            <ion-item class="item-accordion" ng-repeat="entityCategory in entity.entityCategoryCollection" ng-show="isGroupShown(entity)" ng-click="next(entity,entityCategory)">
+                {{entityCategory.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,12 @@
+rest\JaxRsActivator.class
+dao\AbstractDAO.class
+dao\CityDAO.class
+rest\CityService.class
+rest\StateService.class
+bean\City.class
+business\CityBusiness.class
+utils\HibernateUtil.class
+dao\StateDAO.class
+bean\State.class
+business\AbstractBusiness.class
+business\StateBusiness.class

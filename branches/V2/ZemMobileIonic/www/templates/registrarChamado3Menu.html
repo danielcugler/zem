@@ -1,0 +1,38 @@
+<ion-view style="" class=" " id="page9" title="ZEM">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado04.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="h1 title fix-title-header-iphone" style="position: relative; height: 100%;">Registrar Chamado</div>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+        <div class="card">
+            <div class="item">
+                <b>Quero direcionar para:</b>
+            </div>
+            <div class="item item-text-wrap">
+                <ion-list id="registrarChamado3-list10" ng-repeat="entity in entities" ng-hide="entity.entityCategoryCollection.length == 0">
+                    <ion-item class="item item-icon-left" ng-click="toggleGroup(entity)" ng-class="{active: isGroupShown(entity)}">
+                        <i class="icon" ng-class="viewIcon(entity)" style="color: #47b68d;"></i> &nbsp; {{entity.name}}
+                    </ion-item>
+                    <ion-item class="item-accordion" ng-repeat="entityCategory in entity.entityCategoryCollection" ng-show="isGroupShown(entity)" ng-click="next(entity,entityCategory)">
+                        {{entityCategory.name}}
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>        
+    </ion-content>
+</ion-view>

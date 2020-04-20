@@ -1,0 +1,20 @@
+<ion-view title="ZEM" id="page20" class="">
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <h1 class="title fix-title-header-iphone">Mensagens</h1>
+        <!-- <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="update()"><img src="img/update.png" style="height: 100%;" /></button>
+        </div> -->
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <div class="list card">
+            <div class="item item-text-wrap" style="text-align: center;">
+                <h2><strong>{{bm.subject}}</strong></h2>
+                <p>{{bm.publicationDate}}</p>
+            </div>
+            <div class="item item-body item-text-wrap" style="text-align: justify;">
+                {{bm.messageBody}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

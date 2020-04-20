@@ -1,0 +1,243 @@
+/* Impede que o modal movimente a tela ao abrir */
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    padding-right: 0px !important;
+    overflow-y: auto;
+}
+
+    .asc {
+        content: "";
+        background: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7) no-repeat;
+        background-position: right;
+        padding-right: 17px;
+    }
+    
+    .desc {
+        content: "";
+        background: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7) no-repeat;
+        background-position: right;
+        padding-right: 17px;
+    }
+    
+    .uns {
+        content: "";
+        background: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==) no-repeat;
+        background-position: right;
+        padding-right: 17px;
+    }
+
+.tablesorter .tablesorter-filter-row{
+    display: none;
+}
+
+
+.hideID {
+	display:none;
+	visibility:hidden;
+} 
+ .hideField {
+	display:none;
+	
+} 
+ .hideTD {
+	display:none;
+	
+} 
+
+.thumb-image {
+    float:left;
+    width:100px;
+    position:relative;
+    padding:5px;
+}
+
+
+.legend .title {
+    display: block;
+    margin-bottom: 0.5em;
+    line-height: 1.2em;
+    padding: 0 0.3em;
+}
+
+.legend .color-sample {
+    display: block;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border: 9px solid; /* Comment out if you don't want to show the fillColor */
+    border-radius: 0.2em; /* Comment out if you prefer squarish samples */
+    margin-right: 0.4em;
+}
+ 
+.legend .white{
+    display: block;
+    float: left;
+    width: 1.2em;
+    height: 1.3em;
+    border: 1px solid; /* Comment out if you don't want to show the fillColor */
+    border-radius: 0.2em; /* Comment out if you prefer squarish samples */
+    margin-right: 0.4em;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+$pad: 20px;
+
+.grid {
+  background: white;
+  margin: 0 0 $pad 0;
+  
+  &:after {
+    /* Or @extend clearfix */
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[class*='col-'] {
+  float: left;
+  padding-right: $pad;
+  .grid &:last-of-type {
+    padding-right: 0;
+  }
+}
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.col-1-2 {
+  width: 90%;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+  padding: $pad 0 $pad $pad;
+  [class*='col-']:last-of-type {
+    padding-right: $pad;
+  }
+}
+.chart {
+  width: 100%; 
+  height: 400px;
+}
+
+.monitor-title h2{
+	color: #5b5b5b;
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding: 4px 13px;
+}
+
+#comboName .col-md-4{
+	padding-left: 0px;
+}
+
+.espacamento-left{
+	padding-left: 0px;
+}
+
+.espacamento-right{
+	padding-right: 0px;
+}
+
+.fieldset-space{
+	padding-bottom: 25px;
+}
+
+.sem-margem{
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.tamanho-botao{
+	width:100px;
+}
+
+.espacamento-menor{
+	padding-left: 5px; 
+	padding-right: 5px;
+}
+
+#botoes{
+	padding-top:20px;
+}
+
+.form-zero{
+	margin-bottom:0px;
+}
+
+.espacamento-fieldset{
+	height:55px;
+}
+
+.vermelho{
+	color: red;
+}
+
+.paddingEsquerdo{
+	padding-left: 8px !important;
+}
+
+.colunaAcoes{
+	padding-right: 8px !important;;
+	text-align: right !important;;
+}
+
+.centerTabela{
+	text-align: center;
+}
+
+.scrollTabela{
+	min-width:1020px;
+	overflow-x:auto;
+}
+
+.espacamentoFiltros{
+	margin-bottom: 5px;
+	padding: 0;
+}
+
+.iconePreto{
+	color: #000;
+}
+
+.listaIcone{
+	display: inline-block;
+	list-style: outside none none;
+	margin-right: 1px;
+	margin-left: 1px;
+	margin-bottom:5px;
+}
+
+.icheckbox_margin {
+	margin: 0;
+}
+
+/* Paginação Table Sorter */
+#pager .pages {
+	display: inline;
+}
+
+.not-padding {
+	padding: 0 !important;
+}
+
+.padding-monitor-pagination {
+	padding: 0 !important;
+}
+
+.glyphicon-monitor-pagination {
+	padding: 0 !important;
+}

@@ -1,0 +1,51 @@
+<ion-view id="page7" title="ZEM">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado01.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado02.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado03.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado04.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado05.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado06.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado07.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões --><!-- box-shadow: 0px 0px 1px #424242; -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <h1 class="title">Registrar Chamado</h1>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp($index)">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+        <div class="card">
+            <div class="item">
+                <b>Desejo realizar um(a):</b>
+            </div>
+            <div class="item item-text-wrap">
+                <ion-list class=" " id="registrarChamado-list4">
+                    <ion-item class=" radioTipoChamado" ng-repeat="callClassification in callClassifications" ng-click="next(callClassification)">{{callClassification.name}}</ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "berlinSans";
+  src:url("berlinSans.ttf") format("truetype");
+}
+
+body{
+  background-color: #E5E9EC;
+}
+
+.principal{
+  margin: auto;
+  max-width: 500px;
+  padding: 5px 0;
+  text-align: center;
+  width: 100%;
+}
+
+img{
+  width: 80%;
+}
+
+#prefeitura{
+	width: 50%;
+}
+
+.space1{
+  height: 70px;
+}
+
+.space2{
+  height: 70px;
+}
+
+.texto{
+  color: #7BC3AB;
+  font-size: 50px;
+  text-align: center;
+  font-family: berlinSans;
+}
+
+.hashtag{
+  color: #5E9DBC;
+  font-size: 80px;
+  text-align: center;
+  font-family: berlinSans;
+}
+
+.rodape{
+  width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+.imagem{
+  width: 24%;
+  display: inline-block;
+}
+
+/* Checkbox iCheck Square Aero */
+.icheckbox_square-aero,
+.iradio_square-aero {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(aero.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-aero {
+    background-position: 0 0;
+}
+    .icheckbox_square-aero.hover {
+        background-position: -24px 0;
+    }
+    .icheckbox_square-aero.checked {
+        background-position: -48px 0;
+    }
+    .icheckbox_square-aero.disabled {
+        background-position: -72px 0;
+        cursor: default;
+    }
+    .icheckbox_square-aero.checked.disabled {
+        background-position: -96px 0;
+    }
+
+.iradio_square-aero {
+    background-position: -120px 0;
+}
+    .iradio_square-aero.hover {
+        background-position: -144px 0;
+    }
+    .iradio_square-aero.checked {
+        background-position: -168px 0;
+    }
+    .iradio_square-aero.disabled {
+        background-position: -192px 0;
+        cursor: default;
+    }
+    .iradio_square-aero.checked.disabled {
+        background-position: -216px 0;
+    }
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min-device-pixel-ratio: 1.5) {
+    .icheckbox_square-aero,
+    .iradio_square-aero {
+        background-image: url(aero@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}
+/* Fim Checkbox iCheck Square Aero */
+
+#links {
+  padding: 5em;
+}
+
+.button-zem {
+  display: inline;
+}
+
+.btn-zem {
+  background-color: #7BC3AB;
+  color: #FFFFFF;
+  width: 300px;
+}
+
+.btn-zem:hover {
+  background-color: #5E9DBC;
+  color: #FFFFFF !important;
+}

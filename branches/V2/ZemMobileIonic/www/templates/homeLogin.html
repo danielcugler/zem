@@ -1,0 +1,17 @@
+<ion-view class="home-view" title="Home" ng-controller="homeLoginCtrl">
+  <ion-nav-title>
+    <span>Página Inicial</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="row">
+      <div class="col">
+        <h3 class="welcome-message">Olá {{user.name}}</h3>
+        <p class="welcome-message">Login efetuado com sucesso.</p>
+        <!-- <img ng-src="{{user.picture}}"> -->
+        <button class=" button button-positive  button-block " id="page-button6" ng-click="createNewCall()">Novo chamado</button>
+        <button class=" button button-stable  button-block " style="color:#000000;border-radius:10px 10px 10px 10px;" id="page-button5" ng-click="showLogOutMenu()">Logout</button>
+        <button class=" button button-assertive  button-block " style="color:#FFFFFF;border-radius:10px 10px 10px 10px;" id="page-button7" ng-click="logout()">Logout ZEM</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

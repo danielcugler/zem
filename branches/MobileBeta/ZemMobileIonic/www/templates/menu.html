@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-balanced" style="z-index: 9;">
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-back-button class="button-icon icon ion-ios-arrow-back" side="left"></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right" width="200" >
+        <ion-header-bar class="bar-zem">
+            <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item menu-close ng-click="home()">
+                    Início
+                </ion-item>
+                <ion-item menu-close ng-click="registrarChamado()">
+                    Novo chamado
+                </ion-item>
+                <ion-item menu-close ng-click="meusChamados()">
+                    Meus chamados
+                </ion-item>
+                <ion-item menu-close ng-click="minhasMensagens()">
+                    Minhas mensagens
+                </ion-item>
+                <ion-item menu-close ng-click="configuracao()">
+                    Configurações
+                </ion-item>
+                <ion-item menu-close ng-click="about()">
+                    Sobre o ZEM
+                </ion-item>
+                <ion-item menu-close ng-click="logout()">
+                    Sair
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

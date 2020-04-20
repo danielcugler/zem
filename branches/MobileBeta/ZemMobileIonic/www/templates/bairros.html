@@ -1,0 +1,11 @@
+<ion-view style="" id="page7" title="Bairros">
+    <ion-content class="has-header" padding="true">
+        <ion-scroll direction="y">
+            <ion-list>
+                <ion-item ng-repeat="bairro in bairros" ng-click="setNeighborhood(bairro)">
+                    {{bairro.name}}
+                </ion-item>
+            </ion-list>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

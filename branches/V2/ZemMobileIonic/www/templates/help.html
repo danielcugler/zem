@@ -1,0 +1,68 @@
+<ion-view title="ZEM">
+    <!-- View do help de registrar um chamado -->
+    <script id="registrarChamadoHelp.html" type="text/ng-template">
+        <ion-view view-title="Título" align-title="center" style="background-color: #6BC5A4;">
+            <ion-header-bar class="bar bar-head bar-balanced" style="background-color: #6BC5A4;">
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="!slideIndex">
+                        Sair
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+                        Voltar
+                    </a>
+                </div>
+                <div class="h1 title">Registrar um chamado</div>
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="next()" ng-show="slideIndex != 6">
+                        Próximo
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="slideIndex == 6">
+                        Sair
+                    </a>
+                </div>
+            </ion-header-bar>
+            <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado01.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado02.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado03.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado04.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado05.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado06.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado07.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+            </ion-slide-box>
+        </ion-view>
+    </script>
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="h1 title" style="position: relative; height: 100%;">Tutoriais</div>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <!-- <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp()">
+                <i class="icon ion-information-circled" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div> -->
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header" ng-controller="helpPopoverCtrl">
+        <div class="card">
+            <ul class="list">
+                <li class="item" ng-click="registrandoChamado($index)">
+                    Registrando um chamado
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

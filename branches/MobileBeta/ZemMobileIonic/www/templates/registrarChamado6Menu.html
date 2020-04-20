@@ -1,0 +1,28 @@
+<ion-view style="" class=" " id="page12" title="Registrar Chamado">
+  <ion-content class="has-header" padding="true">
+    <form class="list " id="registrarChamado6-form9" name="form" novalidate="">
+      <label name="descricao" id="registrarChamado6-textarea1" class="item item-input " ng-class="{'has-error' : form.descricao.$invalid && enviado}">
+        <textarea placeholder="Descreva sua solicitação aqui!" name="descricao" ng-model="unsolvedCall.description.information" rows="10"  ng-maxlength="400" ng-required="true"></textarea>
+        <div class="padding">
+          <p style="color:red" ng-show="form.descricao.$error.required && enviado ">Este campo é obrigatório</p>
+          <p style="color:red" ng-show="form.descricao.$error.maxlength && enviado ">Máximo 400 caracteres</p>
+        </div>
+      </label>
+      <br/>
+      <p>Adicionar fotos:</p>
+      <div class="button-bar" id="registrarChamado6-button-bar3">
+        <button class="button button-zem-blue button-block icon-left ion-camera" id="registrarChamado6-button25" ng-click="getCamera()">Da câmera</button>
+        <button class="button button-zem-blue button-block icon-left ion-folder" id="registrarChamado6-button26" ng-click="getGallery2()">Da galeria</button>
+      </div>
+      <div class="list">
+        <ion-scroll direction="x" class="item" ng-show="unsolvedCall.mediasPath.length>0">
+          <div class="imgthumbnailCall" ng-repeat="img in unsolvedCall.mediasPath track by $index" ng-show="unsolvedCall.mediasPath.length>0">
+            <img  ng-src="{{'data:image/png;base64,' + img}}"/>
+            <a ng-click="remove(img);"><i class="icon ion-close-round" style="position:fixed;margin-left:0px; margin-top:0px;"></i></a>
+          </div>
+        </ion-scroll>
+      </div>
+    </form>
+    <button class=" button button-balanced  button-block " id="registrarChamado6-button28" ng-click="saveCall(form)">Enviar</button>
+  </ion-content>
+</ion-view>

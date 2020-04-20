@@ -1,0 +1,51 @@
+<ion-view style="" class=" " id="page4" title="Cadastro" hide-nav-bar="true">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/HfYRgzrBTvualtVCuxDc_login-logo.png" height="auto" width="40%">
+        </div>
+        <div style="width: 283px; height: 50px;" class="spacer"></div>
+        <form style="" class="list " name="form" id="cadastro-form4" novalidate="">
+            <ion-list style="" class=" " id="cadastro-list2">
+                <label style="" name="cNome" id="cadastro-input6" class="item item-input " ng-class="{'has-error' : form.nome.$invalid && enviado}">
+                    <input placeholder="Nome" type="text" name="nome" ng-model="citizen.name" ng-minlength="3" maxlength="40" required>
+                    <div class="padding">
+                      <p style="color:red" ng-show="form.nome.$error.required && enviado ">Este campo é obrigatório</p>
+                      <p style="color:red" ng-show="form.nome.$error.maxlength && enviado ">Máximo 40 caracteres</p>
+                      <p style="color:red" ng-show="form.nome.$error.minlength && enviado ">Mínimo 3 caracteres</p>
+                    </div>
+                </label>
+                <label style="" name="cCPF" id="cadastro-input9" class="item item-input " ng-class="{'has-error' : form.cpf.$invalid && enviado}">
+                    <input placeholder="CPF" type="tel" name="cpf" ng-model="citizen.citizen_cpf" ng-required="true" ng-minlength="1" ui-br-cpf-mask>
+                    <div class="padding">
+                      <p style="color:red" ng-show="form.cpf.$error.required && enviado ">Este campo é obrigatório</p>
+                      <p style="color:red" ng-show="form.cpf.$error.cpf && enviado">CPF inválido</p>
+                    </div>
+                </label>
+                <label style="" name="cTelefone" id="cadastro-input10" class="item item-input " ng-class="{'has-error' : form.telefone.$invalid && enviado}">
+                    <input placeholder="Telefone" type="tel" name="telefone"  ng-model="citizen.phone_number"  ng-minlength="1" ui-br-phone-number>
+                    <div class="padding">
+                      <!--<p style="color:red" ng-show="form.telefone.$error.required && enviado ">Este campo é obrigatório</p>-->
+                      <p style="color:red" ng-show="form.telefone.$error.brPhoneNumber && enviado">Telefone inválido</p>
+                    </div>
+                </label>
+                <label style="" name="cEmail" id="cadastro-input8" class="item item-input " ng-class="{'has-error' : form.email.$invalid && enviado}">
+                    <input placeholder="Email" type="email" name="email"  ng-model="citizen.email" ng-maxlength="40" ng-required="true">
+                    <div class="padding">
+                      <p style="color:red" ng-show="form.email.$error.required && enviado ">Este campo é obrigatório</p>
+                      <p style="color:red" ng-show="form.email.$error.email && enviado ">Email inválido</p>
+                    </div>
+                </label>
+                <label style="" name="cSenha" id="cadastro-input7" class="item item-input " ng-class="{'has-error' : form.senha.$invalid && enviado}">
+                    <input placeholder="Senha" type="password" name="senha" ng-model="citizen.password" ng-minlength="8" ng-maxlength="12" ng-required="true">
+                    <div class="padding">
+                      <p style="color:red" ng-show="form.senha.$error.required && enviado ">Este campo é obrigatório</p>
+                      <p style="color:red" ng-show="form.senha.$error.maxlength && enviado ">Máximo 12 caracteres</p>
+                      <p style="color:red" ng-show="form.senha.$error.minlength && enviado ">Mínimo 8 caracteres</p>
+                    </div>
+                </label>
+            </ion-list>
+            <a class=" button button-balanced  button-block icon-right ion-android-arrow-forward " id="cadastro-button11" ng-click="proximo(form)">Próximo</a>
+        </form>
+
+    </ion-content>
+</ion-view>

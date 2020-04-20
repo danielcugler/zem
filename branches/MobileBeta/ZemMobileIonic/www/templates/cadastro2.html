@@ -1,0 +1,27 @@
+<ion-view style="" class=" " id="page5" title="Cadastro" hide-nav-bar="true">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/vwvQV5pSgOqLUQHIYzDQ_login-logo.png" height="auto" width="40%">
+        </div>
+        <div style="width: 283px; height: 52px;" class="spacer"></div>
+        <p class=" " style="color: rgb(0, 0, 0); text-align: center;" id="cadastro2-markdown3">Permita-nos conhecer um pouco mais sobre você:</p>
+        <ion-list>
+            <ion-item ng-value="citizen.ufeSg.ufeSg" ng-click="setEstado()" ng-dissabled="true">
+                {{citizen.state.name || 'Selecione o estado'}}
+            </ion-item>
+            <ion-item ng-value="citizen.cityId.cidadeId" ng-click="setcity2()" ng-disabled="!citizen.state">
+                {{citizen.cityId.name || 'Selecione a cidade'}}
+            </ion-item>
+            <ion-item ng-value="citizen.neighborhood.neighborhood_id" ng-click="setBairro()" ng-disabled="!citizen.cityId">
+                {{citizen.neighborhoodId.name || 'Selecione o bairro'}}
+            </ion-item>
+        </ion-list>
+        <div class=" button-bar" id="cadastro2-button-bar2" style="margin-top:3%;">
+            <button ng-repeat="button in buttons" class="button-bar button" ng-class="{'active': activeButton == $index}" ng-click="setActiveButton($index); setGender($index)"> {{button.text}}</button>
+        </div>
+        <div class=" button-bar " id="cadastro2-button-bar1">
+            <a class=" button button-assertive  button-block icon-left ion-android-arrow-back " id="cadastro2-button12" ui-sref="cadastro">Voltar</a>
+            <button class=" button button-balanced  button-block " id="cadastro2-button13" ng-click="save(citizen)">Concluir</button>
+        </div>
+    </ion-content>
+</ion-view>

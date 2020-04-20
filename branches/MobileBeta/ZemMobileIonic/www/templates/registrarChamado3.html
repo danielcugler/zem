@@ -1,0 +1,22 @@
+<ion-view style="" class=" " id="page9" title="Registrar Chamado">
+    <ion-content class="has-header" padding="true">
+        <h4 class=" " style="color: rgb(0, 0, 0);" id="registrarChamado3-heading3">Quero direcionar para:</h4>
+        <ion-list class=" " id="registrarChamado3-list10" ng-repeat="entity in entities">
+            <!--  <ion-item style="" id="registrarChamado3-list-item22" class="item-icon-left  ">
+                <i class="icon ion-social-usd"></i>Economia</ion-item>
+            <ion-item style="" id="registrarChamado3-list-item23" class="item-icon-left  ">
+                <i class="icon ion-ios-book"></i>Educação</ion-item>
+            <ion-item style="" id="registrarChamado3-list-item24" class="item-icon-left  ">
+            	<i class="icon ion-android-home"></i>Habitação</ion-item>
+            <ion-item class="item-accordion" ng-click="next(entity)" ng-value="entity.entityId">
+                {{entity.name}}
+            </ion-item>-->
+            <ion-item class="item-stable" ng-click="toggleGroup(entity)" ng-class="{active: isGroupShown(entity)}">
+                <i class="icon" ng-class="isGroupShown(entity) ? 'ion-minus' : 'ion-plus'"></i> &nbsp; {{entity.name}}
+            </ion-item>
+            <ion-item class="item-accordion" ng-repeat="entityCategory in entity.entityCategoryCollection" ng-show="isGroupShown(entity)" ng-click="next(entity,entityCategory)">
+                {{entityCategory.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+<ion-view style="" id="page8" title="Estados">
+    <ion-content class="has-header" padding="true">
+        <ion-scroll direction="y">
+            <ion-list>
+                <ion-item ng-repeat="estado in estados" ng-click="setState(estado)">
+                    {{estado.name}}
+                </ion-item>
+            </ion-list>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

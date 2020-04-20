@@ -1,0 +1,39 @@
+<ion-view title="ZEM" id="page25" class=" ">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/minhasMensagem.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button button-balanced button-clear" ng-click="update()">
+                <i class="icon ion-ios-loop-strong" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+        <div class="h1 title">Mensagens</div>
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button button-balanced button-clear" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <!-- Card que informa que não há chamados -->
+        <div class="card" ng-hide="cardNoBM">
+            <div class="item item-text-wrap" style="text-align: center">
+                Você não possui mensagens.
+            </div>
+        </div>
+
+        <ion-list ng-repeat="bm in bmList">
+            <ion-item ng-class="{'bold': isRead(bm.broadcastMessageId)}" ng-click="next(bm)" class="item item-icon-left"> <i ng-if="bm.broadcastMessageCategoryId.broadcastMessageCategoryId === 1" class="icon ion-alert assertive"></i> {{bm.subject}}</ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="!max" on-infinite="loadMore()" distance="1%" immediate-check="false">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

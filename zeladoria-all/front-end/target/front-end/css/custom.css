@@ -1,0 +1,124 @@
+
+.tablesorter .tablesorter-filter-row .disabled {
+    display: none;
+}
+
+.enabled-button{
+	color: red;
+}
+.disabled-button{
+	color: green;
+}
+
+.thumb-image {
+    float:left;
+    width:100px;
+    position:relative;
+    padding:5px;
+}
+
+body{
+	margin-left: 15%;
+	margin-right: 10%;
+	margin-top:5%;
+}
+#modelMesage{
+	width:600px;
+	height: 300px;
+}
+#camposI{
+	width: 35%;
+}
+
+#botoesI{
+margin-top: 5%;
+margin-left: 20%;
+}
+
+.container {
+	background-color: #FFFFFF;
+}
+
+.panel-heading {
+	background-color: #4C3327!important;
+
+}
+.panel-primary {
+		border-color: #F2EFE4!important;
+}
+
+.filter{
+width:50%;
+float:left;
+}
+.combo{
+width:50%;
+float:left;
+}
+
+
+.btn-default { 
+  color: #000000; 
+  background-color: #F2EFE4; 
+  border-color: #4C3327; 
+} 
+ 
+.btn-default:hover, 
+.btn-default:focus, 
+.btn-default:active, 
+.btn-default.active, 
+.open .dropdown-toggle.btn-default { 
+  color: #000000; 
+  background-color: #DEBD85; 
+  border-color: #4C3327; 
+} 
+ 
+.btn-default:active, 
+.btn-default.active, 
+.open .dropdown-toggle.btn-default { 
+  background-image: none; 
+} 
+ 
+.btn-default.disabled, 
+.btn-default[disabled], 
+fieldset[disabled] .btn-default, 
+.btn-default.disabled:hover, 
+.btn-default[disabled]:hover, 
+fieldset[disabled] .btn-default:hover, 
+.btn-default.disabled:focus, 
+.btn-default[disabled]:focus, 
+fieldset[disabled] .btn-default:focus, 
+.btn-default.disabled:active, 
+.btn-default[disabled]:active, 
+fieldset[disabled] .btn-default:active, 
+.btn-default.disabled.active, 
+.btn-default[disabled].active, 
+fieldset[disabled] .btn-default.active { 
+  background-color: #F2EFE4; 
+  border-color: #4C3327; 
+} 
+ 
+.hideID {
+	display:none;
+	visibility:hidden;
+} 
+ .hideField {
+	display:none;
+	
+} 
+ .hideTD {
+	display:none;
+	
+} 
+.btn-default .badge { 
+  color: #F2EFE4; 
+  background-color: #000000; 
+}
+
+
+
+/*.error {
+   color: red;
+   font-size: 12px;
+}
+*/

@@ -1,0 +1,92 @@
+.ms-container:before,
+.ms-container:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.ms-container:after {
+  clear: both;
+}
+.ms-container .ms-selectable,
+.ms-container .ms-selection {
+  display: block;
+  background: #f5f5f6;
+}
+.ms-container .ms-selectable {
+  position: relative;
+  float: left;
+  margin-right: 25px;
+}
+.ms-container .ms-selectable:after {
+  content: '\e120';
+  font-family: "Glyphicons Halflings";
+  display: block;
+  position: absolute;
+  right: -19px;
+  color: #303641;
+  font-size: 15px;
+  top: 50%;
+  margin-top: -8px;
+}
+.ms-container .ms-selection {
+  float: left;
+}
+.ms-container .ms-list {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 350px;
+  height: 300px;
+  outline: none;
+  border: 1px solid #dddddd;
+  overflow: auto;
+  background-color: #FFFFFF;
+}
+.ms-container .ms-list::-webkit-scrollbar {
+  width: 5px;
+}
+.ms-container .ms-list::-webkit-scrollbar-track {
+  width: 5px;
+  background-color: #f5f5f6;
+}
+.ms-container .ms-list::-webkit-scrollbar-thumb {
+  background-color: #d2d2d2;
+}
+.ms-container .ms-list > li {
+  border-bottom: 1px solid #ebebeb;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.ms-container .ms-list > li:hover {
+  background: #303641;
+  color: #fff;
+}
+.ms-container .ms-list > li span {
+  display: block;
+  padding: 4px 8px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ms-container .ms-list > li:last-child {
+  border-bottom: 0;
+}
+
+.custom-header{
+	background-color: #68c39f;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+.custom-footer{
+	background-color: #f7f7f7;
+    padding: 5px;
+    text-align: right;
+}

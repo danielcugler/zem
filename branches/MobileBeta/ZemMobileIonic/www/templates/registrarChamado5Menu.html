@@ -1,0 +1,31 @@
+<ion-view style="" class=" " id="page11" title="Registrar Chamado">
+    <ion-content class="has-header" padding="true">
+        <h4 class=" " style="color: rgb(0, 0, 0);" id="registrarChamado5-heading4">Informe o endereço desejado:</h4>
+        <form class="list " id="registrarChamado5-form6" name="form" novalidate="">
+            <label name="rua" id="registrarChamado5-input11" class="item item-input " ng-class="{'has-error' : form.rua.$invalid && enviado}">
+                <input placeholder="Rua" type="text" ng-model="unsolvedCall.addressId.streetName" name="rua" ng-maxlength="100" ng-required="true">
+                <div class="padding">
+                    <p style="color:red" ng-show="form.rua.$error.required && enviado ">Este campo é obrigatório</p>
+                    <p style="color:red" ng-show="form.rua.$error.maxlength && enviado ">Máximo 100 caracteres</p>
+                </div>
+            </label>
+            <label name="numero" id="registrarChamado5-input13" class="item item-input" ng-class="{'has-error' : form.numero.$invalid && enviado}">
+                <input placeholder="Número" type="number" name="numero" ng-model="unsolvedCall.addressId.addressNumber" ng-maxlength="5" ng-required="true">
+                <div class="padding">
+                    <p style="color:red" ng-show="form.numero.$error.required && enviado ">Este campo é obrigatório</p>
+                    <p style="color:red" ng-show="form.numero.$error.maxlength && enviado ">Máximo 5 caracteres</p>
+                </div>
+            </label>
+            <label name="complemento" id="registrarChamado5-input14" class="item item-input " ng-class="{'has-error' : form.comp.$invalid && enviado}">
+                <input placeholder="Complemento" type="text" ng-model="unsolvedCall.addressId.complement" name="comp" ng-maxlength="20">
+                <div class="padding">
+                    <p style="color:red" ng-show="form.comp.$error.maxlength && enviado ">Máximo 20 caracteres</p>
+                </div>
+            </label>
+            <ion-item ng-value="unsolvedCall.addressId.neighborhoodId" ng-click="setBairro()">
+                {{unsolvedCall.addressId.neighborhoodId.name || 'Selecione o bairro'}}
+            </ion-item>
+            <a class=" button button-balanced  button-block " id="registrarChamado5-button24" ng-click="next(form)">Prosseguir</a>
+        </form>
+    </ion-content>
+</ion-view>

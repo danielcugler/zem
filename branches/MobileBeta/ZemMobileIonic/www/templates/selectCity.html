@@ -1,0 +1,40 @@
+<ion-view style="" class=" " id="page13" title="ZEM" hide-nav-bar="true">
+    <ion-content class="has-header" padding="true">
+        <div class="">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/HfYRgzrBTvualtVCuxDc_login-logo.png" height="auto" width="50%">
+        </div>
+        <div style="">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="margin-top: 0px; margin-bottom: 0px;">
+                        <div style="padding: 10px; font-size: 15px;text-align: center;">
+                            Selecione a Cidade que deseja registrar seus chamados.</div>
+                        <!-- <label class="item item-input item-select">
+                            <div class="input-label">
+                                Estado
+                            </div>
+                            <select ng-model="selectState" ng-options="state.name for state in states">
+                                <option value="">Selecione um Estado</option>
+                            </select>
+                        </label> -->
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Cidade
+                            </div>
+                            <select ng-model="selectCity" ng-options="city.name for city in cities">
+                                <option value="">Selecione</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <button class="button button-balanced  button-block ion-checkmark" ng-click="getIpServer(selectState.name, selectCity.name)"></button> -->
+                <button class="button button-balanced  button-block ion-checkmark" ng-click="getIpServer(selectCity)"></button>
+            </div>
+            <!-- <div class="row">
+                <button class=" button button-positive  button-block button-clear " ng-click="">Sua cidade ainda não possui o ZEM?</button>
+            </div> -->
+        </div>
+    </ion-content>
+</ion-view>

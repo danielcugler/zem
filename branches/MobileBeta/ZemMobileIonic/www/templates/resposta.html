@@ -1,0 +1,15 @@
+<ion-view title="Resposta" class="">
+    <ion-content padding="true" class="">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <strong>Resposta: </strong>{{unsolvedCall.observation.information}}
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                O que você achou deste retorno?
+                <ionic-ratings ratingsobj='ratingsObject' index='$index'></ionic-ratings>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

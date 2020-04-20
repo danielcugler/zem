@@ -1,0 +1,70 @@
+<ion-view title="ZEM">
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <h1 class="title">Configurações</h1>
+        <!-- <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="update()"><img src="img/update.png" style="height: 100%;" /></button>
+        </div> -->
+    </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+        <ion-list>
+            <ion-item class="item item-icon-left" ng-click="exibirConfSenha()">
+                <i class="icon" ng-class="confSenha ? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i><strong>Alterar Senha</strong>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="confSenha">
+                <form name="alterarSenhaForm" novalidate>
+                    <div class="list">
+                        <div class="spacer" style="height: 10px;"></div>
+                        <label class="item item-input" ng-class="{'has-error' : alterarSenhaForm.oldPassword.$invalid && enviado}">
+                            <input placeholder="Senha atual" type="password" name="oldPassword" ng-minlength="8" ng-maxlength="12" ng-model="password.old" ng-required="true">
+                            <dir class="padding">
+                                <p style="color:red" ng-show="alterarSenhaForm.oldPassword.$error.required && enviado">Este campo é obrigatório</p>
+                                <p style="color:red" ng-show="alterarSenhaForm.oldPassword.$error.maxlength && enviado">Máximo 12 caracteres</p>
+                                <p style="color:red" ng-show="alterarSenhaForm.oldPassword.$error.minlength && enviado">Mínimo 8 caracteres</p>
+                            </dir>
+                        </label>
+                        <label class="item item-input" ng-class="{'has-error' : alterarSenhaForm.newPassword.$invalid && enviado}">
+                            <input placeholder="Nova senha" type="password" name="newPassword" ng-minlength="8" ng-maxlength="12" ng-model="password.newPassword" ng-required="true">
+                            <dir class="padding">
+                                <p style="color:red" ng-show="alterarSenhaForm.newPassword.$error.required && enviado">Este campo é obrigatório</p>
+                                <p style="color:red" ng-show="alterarSenhaForm.newPassword.$error.maxlength && enviado">Máximo 12 caracteres</p>
+                                <p style="color:red" ng-show="alterarSenhaForm.newPassword.$error.minlength && enviado">Mínimo 8 caracteres</p>
+                            </dir>
+                        </label>
+                        <label class="item item-input" ng-class="{'has-error' : alterarSenhaForm.newPasswordConfirm.$invalid && enviado}">
+                            <input placeholder="Confirmação de senha" type="password" name="newPasswordConfirm" ng-model="password.newConfirm" ng-required="true" ng-pattern="getPattern(password.newPassword, password.newConfirm)">
+                            <dir class="padding">
+                                <p style="color:red" ng-show="passwordDif && enviado">As senhas devem ser iguais</p>
+                            </dir>
+                        </label>
+                        <div class="spacer" style="height: 10px;"></div>
+                        <button class="button button-balanced  button-block icon ion-checkmark " id="buttonAlterPassword" ng-click="changePassword(alterarSenhaForm, password)" style="margin: 0px;"></button>
+                        <!-- <button class="button button-balanced  button-block icon ion-checkmark " id="buttonAlterPassword" ng-click="limpar(alterarSenhaForm)" style="margin: 0px;"></button> -->
+                        <div class="spacer" style="height: 10px;"></div>
+                    </div>
+                </form>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item class="item item-icon-left" ng-click="exibirConfMsg()">
+                <i class="icon" ng-class="confMsg ? 'ion-arrow-down-b' : 'ion-arrow-up-b'"></i><strong>Recebimento de mensagens</strong>
+            </ion-item>
+            <ion-item class="item-accordion" ng-show="confMsg" style="padding: 0px;">
+                <div class="list">
+                    <div class="item" style="overflow: inherit;text-overflow: inherit;  white-space: normal; line-height: 1.1; text-align: justify;">
+                        Nesta configuração pode ser alterado o tipo de mensagem que você deseja visualizar, escolhendo entre emergenciais, normal ou ambas. Essas configurações podem ser alteradas a qualquer momento.
+                    </div>
+                    <div class="item item-body">
+                        <ion-toggle toggle-class="toggle-balanced" ng-model="broadcastConfig.normal.checked" ng-change="broadcastConfig.normal.checked">Normal</ion-toggle>
+                        <ion-toggle toggle-class="toggle-balanced" ng-model="broadcastConfig.emergency.checked" ng-change="broadcastConfig.emergency.checked" style="margin-top: 2px;">Emergencial</ion-toggle>
+                        <button class="button button-balanced  button-block icon ion-checkmark " id="buttonAlterPassword" ng-click="changeBroadcastConfig(broadcastConfig)"></button>
+                    </div>
+                </div>
+                <!-- <div class="item">Descrição</div>
+                <ion-toggle toggle-class="toggle-balanced" ng-model="broadcastConfig.normal.checked" ng-change="broadcastConfig.normal.checked">Normal</ion-toggle>
+                <ion-toggle toggle-class="toggle-balanced" ng-model="broadcastConfig.emergency.checked" ng-change="broadcastConfig.emergency.checked">Emergencial</ion-toggle>
+                <button class="button button-balanced  button-block icon ion-checkmark " id="buttonAlterPassword" ng-click="changeBroadcastConfig(broadcastConfig)" style="margin: 0px;"></button> -->
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

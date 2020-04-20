@@ -1,0 +1,64 @@
+<ion-view title="ZEM">
+    <script id="helpInicial.html" type="text/ng-template">
+        <ion-view view-title="Título" align-title="center">
+            <ion-header-bar class="bar bar-head bar-balanced" style="background-color: #6BC5A4;">
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="!slideIndex">
+                        Pular
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+                        Voltar
+                    </a>
+                </div>
+                <div class="h1 title">Bem Vindo ao ZEM</div>
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="next()" ng-show="slideIndex != 2">
+                        Próximo
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="slideIndex == 2">
+                        Continuar
+                    </a>
+                </div>
+            </ion-header-bar>
+            <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                    <img src="img/boasVindas/j1.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/winj1.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/j1_ImgID1.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+            </ion-slide-box>
+        </ion-view>
+    </script>
+    <ion-content class="has-header">
+        <!-- Cor da navbar = #01579b-->
+        <ion-list>
+            <ion-item class="item" style="text-align:center;border: 0px;width:100vw;background-color:#f5fbf9;color:#52967d;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5vh;padding-bottom:5vh;">
+                </i>Você está em <strong>{{cityName}}</strong>
+            </ion-item>
+            <ion-item ng-click="goAddCall()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#99d6bf;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-document" style="font-size:50px"></i>Registrar Chamado
+            </ion-item>
+            <ion-item ng-click="chamados()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#84ceb3;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-document-text" style="font-size:50px"></i>Meus Chamados
+            </ion-item>
+            <ion-item ng-click="messages()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#6bc5a4;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-email badge-container" style="font-size:40px"></i>
+                <span class="badge badge-assertive" ng-show="notifyBM">{{notifyBMNumber}}</span>
+                Minhas Mensagens
+            </ion-item>
+            <ion-item ng-click="config()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#62b496;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-gear-b" style="font-size:50px"></i>Configurações
+            </ion-item>
+            <ion-item ng-click="about()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#5aa489;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-information-circled" style="font-size:40px"></i>Informações
+            </ion-item>
+            <ion-item ng-click="logout()" class="item item-icon-left" style="border: 0px;width:100vw;background-color:#52967d;color:#ffffff;box-shadow:0 0px 5px rgba(0, 0, 0, 0.3);padding-top: 5.2vh;padding-bottom:5.2vh;">
+                <i class="icon ion-power" style="font-size:40px"></i>Logout
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

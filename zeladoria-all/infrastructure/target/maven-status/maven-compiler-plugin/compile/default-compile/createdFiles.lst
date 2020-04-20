@@ -1,0 +1,9 @@
+zup\messages\ISystemConfiguration.class
+zup\messages\SystemConfiguration.class
+zup\formatter\FormatterMd5.class
+zup\messages\Messages.class
+zup\exception\DataAccessLayerException.class
+zup\exception\ValidationException.class
+zup\exception\ModelException.class
+zup\messages\IMessages.class
+zup\formatter\Formatter.class

@@ -1,0 +1,172 @@
+<ion-view title="ZEM">
+    <script id="helpInicial.html" type="text/ng-template">
+        <ion-view view-title="Título" align-title="center" style="background-color: #6BC5A4;">
+            <ion-header-bar class="bar bar-head bar-balanced" style="background-color: #6BC5A4;">
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="!slideIndex">
+                        Pular
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+                        Voltar
+                    </a>
+                </div>
+                <div class="h1 title">Bem Vindo ao ZEM</div>
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="next()" ng-show="slideIndex != 2">
+                        Próximo
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="slideIndex == 2">
+                        Continuar
+                    </a>
+                </div>
+            </ion-header-bar>
+            <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado07.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/meusChamados01.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/minhasMensagem.png" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+            </ion-slide-box>
+        </ion-view>
+    </script>
+    <ion-content class="has-header">
+        <!-- Cor da navbar = #01579b-->
+        <div class="card" style="height: 30vh;margin:10px 10px 0px 10px;">
+            <img style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 15px;padding-top: 10px;" src="img/ZEM-icon.svg"
+                height="auto" width="30%">
+            <h3 style="text-align: center;color: #6BC5A4; margin-bottom:0px;">Você está em {{cityName}}</h3>
+        </div>
+
+        <div class="list">
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/add.png" style="height: 80%;" />
+                        <p style="text-align:center;">Registrar Chamado</p>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/page.png" style="height: 80%;" />
+                        <p style="text-align:center;">Meus Chamados</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/message.png" style="height: 80%;" />
+                        <p style="text-align:center;">Minhas Mensagens</p>
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/settings.svg" style="height: 80%;" />
+                        <p style="text-align:center;">Configurações</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/info.svg" style="height: 80%;" />
+                        <p style="text-align:center;">Informações</p>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item" href="#" style="border: 0px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);height: 18vh;">
+                        <img class="centralizar_objetos" src="img/icons/logout.png" style="height: 80%;" />
+                        <p style="text-align:center;">Logout</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="list" style="">
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #11C1F3;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Registrar Chamado
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #0FB0DD;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Meus Chamados
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #0FB0DD;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Minhas Mensagens
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #0E9CC4;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Configurações
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #0E9CC4;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Informações
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+                <div class="col col-50">
+                    <a class="item item-icon-left" href="#" style="border: 0px;background-color: #0A6E8A;color:white;padding-top: 7vh;padding-bottom:7vh;">
+                        <i class="icon ion-person-stalker"></i>
+                        Logout
+                        <span class="badge badge-assertive">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>-->
+
+        <!--<div class="button-bar">
+            <button class="button button-calm button-menu-card" style="background-color:#47b68d;" ng-click="goAddCall()">
+                <img src="img/add.png" style="height:60%; margin-top:10px;">
+                <p>Registrar Chamado</p>
+            </button>
+            <button class="button button-balanced button-menu-card" style="background-color:#43ad86;" ng-click="chamados()">
+                <img src="img/list.png" style="height:60%; margin-top:10px;">
+                <p>Meus Chamados</p>
+            </button>
+        </div>
+        <div class="button-bar">
+            <button class="button button-royal button-menu-card" style="background-color:#43ad86;" ng-click="messages()">
+                <img src="img/message.png" style="height:60%; margin-top:10px;">
+                <p>Minhas Mensagens</p>
+                </button>
+            <button class="button button-energized button-menu-card" style="background-color:#2eaa7d;" ng-click="config()">
+                <img src="img/config.png" style="height:60%; margin-top:10px;">
+                <p>Configurações</p>
+            </button>
+        </div>
+        <div class="button-bar" />
+            <button class="button button-positive button-menu-card" style="background-color:#2eaa7d;" ng-click="about()">
+                <img src="img/info.png" style="height:60%; margin-top:10px;">
+                <p>Informações</p>
+            </button>
+            <button class="button button-assertive button-menu-card" style="background-color:#15a36f;" ng-click="logout()">
+                <img src="img/logout.png" style="height:60%; margin-top:10px;">
+                <p>Logout</p>
+            </button>
+        </div>-->
+    </ion-content>
+</ion-view>

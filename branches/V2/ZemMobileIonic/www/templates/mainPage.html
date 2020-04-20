@@ -1,0 +1,79 @@
+<ion-view style="" class=" " id="page13" title="ZEM" hide-nav-bar="false">
+    <script id="helpInicial.html" type="text/ng-template">
+        <ion-view view-title="Título" align-title="center">
+            <ion-header-bar class="bar bar-head bar-balanced" style="background-color: #6BC5A4;">
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="!slideIndex">
+                        Pular
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+                        Voltar
+                    </a>
+                </div>
+                <div class="h1 title">Bem Vindo</div>
+                <div class="button">
+                    <a class="button button-balanced no-animation" ng-click="next()" ng-show="slideIndex != 2">
+                        Próximo
+                    </a>
+                    <a class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="slideIndex == 2">
+                        Continuar
+                    </a>
+                </div>
+            </ion-header-bar>
+            <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                    <img src="img/boasVindas/chamado.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/localizacao.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/acompanhe.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/retorno.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/comunicados.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/boasVindas/score.svg" class="fullscreen-image fullscreen-imageHelp">
+                </ion-slide>
+            </ion-slide-box>
+        </ion-view>
+    </script>
+    <ion-content class="has-header" padding="true" style="top: 49px !important;">
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 15px;" src="img/ZEM-icon.svg" height="auto" width="40%">
+            <h3 style="text-align: center;color:#5f9dbc;">Você está em {{cityName}}</h3>
+        </div>
+        <div>
+            <div class="row" style="border-radius:0 0 5px 5px;height:auto;padding:0px">
+                <div class="col col-50" style="text-align:center;color:white;background-color:#11C1F3;border-radius:5px 0 0 0;padding-top:15px;height:auto;" ng-click="goAddCall()">
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/add.png" height="auto" width="40%">Registrar Chamado
+                </div>
+                <div class="col col-50" style="text-align:center;color:white;background-color:#0FB0DD;border-radius:0 5px 0 0;padding-top:15px;height:auto;" ng-click="chamados()">
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/list.png" height="auto" width="40%">Meus Chamados
+                </div>
+            </div>
+            <div class="row" style="border-radius:0 0 5px 5px;height:auto;padding:0px">
+                <div class="col col-45 " style="text-align:center;color:white;background-color:#0E9CC4;border-radius:0 0 0 0;padding-top:15px;height:auto;" ng-click="messages()">
+                    <!--<div class="size-x circle" style="position:fixed; float:right;" ng-show="notifyBM">{{notifyBMNumber}}</div>-->
+                    <span class="badge badge-assertive" ng-show="notifyBM" style="float:right; margin-right:30%;position:absolute">{{notifyBMNumber}}</span>
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/message.png" height="auto" width="40%">Minhas Mensagens
+                </div>
+                <div class="col col-45" style="text-align:center;color:white;background-color:#0C8AAD;border-radius:0 0 0 0;padding-top:15px;height:auto;" ng-click="config()">
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/config.png" height="auto" width="40%">Configurações
+                </div>
+            </div>
+            <div class="row" style="border-radius:0 0 5px 5px;height:auto;padding:0px">
+                <div class="col col-45 " style="text-align:center;color:white;background-color:#0B7B9B;border-radius:0 0 0 5px;padding-top:15px;height:auto;" ng-click="about()">
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/info.png" height="auto" width="40%">Informações
+                </div>
+                <div class="col col-45" style="text-align:center;color:white;background-color:#0A6E8A;border-radius:0 0 5px 0;padding-top:15px;height:auto;" ng-click="logout()">
+                    <img style="display: block; margin-left: auto; margin-right: auto;" src="img/logout.png" height="auto" width="40%">Logout
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

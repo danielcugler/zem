@@ -1,0 +1,321 @@
+/* Empty. Add your own CSS if you like */
+
+body {
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+.bold {
+  font-weight: bold
+}
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+
+.list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+
+label.item.has-error {
+    border-bottom: 2px solid red;
+}
+
+
+/*.thumbnailCall {
+  width: 32%;
+  height: 32%;
+  display: inline-block;
+  margin-left: 1%;
+}
+
+.thumbnailCall img {
+  width:100%;
+  height:100%;
+}*/
+
+
+/*Deixando 3 imagens lado a lado*/
+
+.imgthumbnailCall {
+    width: 32%;
+    height: 32%;
+    display: inline-block;
+    margin-left: 1%;
+}
+
+
+/*css para deixar as imagens quadradas*/
+
+.imgthumbnailCall img {
+    width: 27vw;
+    height: 27vw;
+}
+
+
+/*deixando o x dentro da div e vermelho*/
+
+.imgthumbnailCall a {
+    margin-left: -25px;
+    color: red;
+}
+
+.imgthumbnailCall i {
+    font-size: 7vw;
+}
+
+.orderList {
+    width: 30%;
+    height: 30%;
+    display: inline-block;
+    margin-left: 1%;
+}
+
+.orderList img {
+    width: 27vw;
+    height: 27vw;
+}
+
+
+/*.thumbnailCall a {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
+    color: red;
+}*/
+
+
+/* CSS da galria de imagens */
+
+.image-modal {
+    width: 100% !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.transparent {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.image-list-thumb {
+    padding: 2px 2px 2px 2px;
+    height: 100px;
+}
+
+.centerme {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Fim do CSS da galeria de imagens*/
+
+
+/* Botão com padrão ZEM */
+
+.button.button-zem {
+    border-color: transparent;
+    background-color: #0C8AAD;
+    color: #fff;
+}
+
+.button.button-zem:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button.button-zem.active,
+.button.button-zem.activated {
+    background-color: #2F6E7F;
+}
+
+.button.button-zem.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #444;
+}
+
+.button.button-zem.button-icon {
+    border-color: transparent;
+    background: none;
+}
+
+.button.button-zem.button-outline {
+    border-color: #444;
+    background: transparent;
+    color: #444;
+}
+
+.button.button-zem.button-outline.active,
+.button.button-zem.button-outline.activated {
+    background-color: #444;
+    box-shadow: none;
+    color: #fff;
+}
+
+
+/* Botão com padrão ZEM-error */
+
+.button.button-zem-light {
+    border-color: transparent;
+    background-color: #5E9DBC;
+    color: #fff;
+}
+
+.button.button-zem-light:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button.button-zem-light.active,
+.button.button-zem-light.activated {
+    background-color: #0C8AAD;
+}
+
+.button.button-zem-light.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #444;
+}
+
+.button.button-zem-light.button-icon {
+    border-color: transparent;
+    background: none;
+}
+
+.button.button-zem-light.button-outline {
+    border-color: #444;
+    background: transparent;
+    color: #444;
+}
+
+.button.button-zem-light.button-outline.active,
+.button.button-zem-light.button-outline.activated {
+    background-color: #444;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Botão com padrão ZEM-blue */
+
+.button.button-zem-blue {
+    border-color: transparent;
+    background-color: #11C1F3;
+    color: #fff;
+}
+
+.button.button-zem-blue:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button.button-zem-blue.active,
+.button.button-zem-blue.activated {
+    background-color: #0E9CC4;
+}
+
+.button.button-zem-blue.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #444;
+}
+
+.button.button-zem-blue.button-icon {
+    border-color: transparent;
+    background: none;
+}
+
+.button.button-zem-blue.button-outline {
+    border-color: #444;
+    background: transparent;
+    color: #444;
+}
+
+.button.button-zem-blue.button-outline.active,
+.button.button-zem-blue.button-outline.activated {
+    background-color: #444;
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Head ZEM */
+
+.bar.bar-zem {
+    border-color: #5E9DBC;
+    background-color: #5E9DBC;
+    background-image: linear-gradient(0deg, #5E9DBC, #5E9DBC 50%, transparent 50%);
+    color: #fff;
+}
+
+.bar.bar-zem .title {
+    color: #fff;
+}
+
+.bar.bar-zem.bar-footer {
+    background-image: linear-gradient(180deg, #5E9DBC, #5E9DBC 50%, transparent 50%);
+}
+
+/* subHead ZEM */
+.bar.bar-subHeadZem {
+    border-color: #98D4BB;
+    background-color: #98D4BB;
+    background-image: linear-gradient(0deg, #98D4BB, #98D4BB 50%, transparent 50%);
+    color: #fff;
+}
+
+.bar.bar-subHeadZem .title {
+    color: #fff;
+}
+
+.bar.bar-subHeadZem.bar-footer {
+    background-image: linear-gradient(180deg, #98D4BB, #98D4BB 50%, transparent 50%);
+}
+
+/* Sobre o zem CSS texto*/
+
+.aboutZem {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 4vw 0;
+}
+
+
+/* Css do Ionic Rating */
+
+.ionic_ratings .icon {
+    font-size: 50px;
+}

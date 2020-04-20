@@ -1,0 +1,31 @@
+<ion-view id="page8" title="ZEM">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado02.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões -->
+    <!-- box-shadow: 0px 0px 1px #424242; -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="h1 title fix-title-header-iphone" style="position: relative; height: 100%;">Registrar Chamado</div>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+        <div class="item">
+            <b>Quero me identificar como:</b>
+        </div>
+        <div class="item item-text-wrap">
+            <button class=" button button-zem-blue  button-block" id="registrarChamado2-button20" ng-click="next()">Eu mesmo</button>
+            <button class=" button button-stable  button-block" id="registrarChamado2-button21" ng-click="confirmAnonymous()" style="color:white">Anônimo</button>
+            </dir>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,283 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+                http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="org.postgresql.Driver" />
+
+<property name="url" value="jdbc:postgresql://192.168.4.100:5432/zem" />
+
+<!--
+		<property name="url" value="jdbc:postgresql://191.252.81.80:5432/zup" />
+
+<property name="url" value="jdbc:postgresql://10.70.6.6:5432/zup" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/zup" />
+
+
+		 <property name="url" value="jdbc:postgresql://localhost:5432/zup" 
+			/> 
+-->
+		<property name="username" value="postgres" />
+	<!--	<property name="password" value="postgres" />  -->
+		 <property name="password" value="L4b1t3cDB" /> 
+
+		<!-- <property name="url" value="jdbc:postgresql://localhost:5432/zup" 
+			/> <property name="username" value="postgres" /> <property name="password" 
+			value="L4b1t3cDB" /> <property name="url" value="jdbc:postgresql://192.168.1.200:5432/zup" 
+			/> <property name="username" value="labitec" /> <property name="password" 
+			value="L4b1t3cDB" /> -->
+	</bean>
+	
+	
+		<security:authentication-manager>
+		<security:authentication-provider>
+			<security:password-encoder hash="md5" />
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				users-by-username-query="SELECT system_user_username as username, password, CASE enabled WHEN 0 THEN true WHEN 1 THEN false END as enabled 
+            							FROM system_user WHERE system_user_username = ?"
+				authorities-by-username-query="SELECT system_user_username as username, role 
+            							FROM  system_user u, system_user_profile_system_user_profile_permission_maps m, 
+            							system_user_profile_permission p
+										WHERE system_user_username = ? 
+										AND (u.system_user_profile_id = m.system_user_profile_id 
+										AND m.system_user_profile_permission_id = p.system_user_profile_permission_id)" />
+		</security:authentication-provider>
+	</security:authentication-manager>    
+
+<!--
+<context:component-scan base-package="zup.business" />
+<bean class="security.CustomUserDetailsService" id="customUserDetailsService"/>
+
+<security:authentication-manager>
+    <security:authentication-provider user-service-ref="customUserDetailsService">
+   <security:password-encoder hash="md5" />
+</security:authentication-provider>
+</security:authentication-manager>
+-->
+
+<!-- Start Permissions -->
+<!-- End Permissions -->
+
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile**">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/photos">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/deviceid">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/citizen">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/call/*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/token/*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/eval">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/read">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/remove">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/changepass">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/readlist*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/readcall*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/city*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/rmdevice*">
+		<security:csrf disabled="true" />
+	</security:http>
+	<security:http auto-config="true" use-expressions="true"
+		pattern="/rest/mobile/notify*">
+		<security:csrf disabled="true" />
+	</security:http>
+
+	<security:http use-expressions="true" request-matcher="regex">
+
+		<security:intercept-url pattern="/login.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/showcall.jsp.*\Z"
+			access="permitAll" />			
+		<security:intercept-url pattern="/souzem.html"
+			access="permitAll" />
+
+		<security:intercept-url pattern="\A/assets/Z"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/css/Z"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/fonts/Z"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/images/Z"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/js/Z"
+			access="permitAll" />
+		<security:intercept-url pattern="/index.jsp"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/photosend.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/mnewcall.jsp.*\Z"
+			access="permitAll" />
+		<!-- CRIAÇÃO DE CHAMADOS -->
+		<security:intercept-url pattern="/identification.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="/useridentification.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="/mobile.jsp"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/newcall.jsp.*\Z"
+			access="permitAll" />
+		<security:intercept-url pattern="\A/showcall.jsp.*\Z"
+			access="permitAll" />
+		<!-- Classificacao de chamados -->
+		<security:intercept-url pattern="/callclassification.jsp"
+			access="hasRole('ROLE_CALLCLASSIFICATION_READ')" />
+		<security:intercept-url pattern="/addcc.jsp"
+			access="hasRole('ROLE_CALLCLASSIFICATION_UPDATE')" />
+			<!-- ENTIDADE -->
+		<security:intercept-url pattern="/entity2.jsp"
+			access="hasRole('ROLE_ENTITY_READ')" />
+			  
+	 	<security:intercept-url pattern="\A/rest/entity2/search.*\Z" access="hasRole('ROLE_ENTITY_READ')"  method="GET"/>
+	<security:intercept-url pattern="\A/entity2/ed.*\Z" access="hasRole('ROLE_ENTITY_UPDATE')" method="PUT"/>
+<security:intercept-url pattern="/entity2" access="hasRole('ROLE_ENTITY_UPDATE')" method="PUT"/>
+<security:intercept-url pattern="/entity2" access="hasRole('ROLE_ENTITY_CREATE')" method="POST"/>
+<security:intercept-url pattern="/entity2/teste/*" access="isFullyAuthenticated() and hasRole('ROLE_ENTITY_READ')" method="GET"/>
+		<security:intercept-url pattern="/entity.jsp"
+			access="hasRole('ROLE_ENTITY_READ')" />
+		<security:intercept-url pattern="/addEntity.jsp"
+			access="hasRole('ROLE_ENTITY_CREATE')" />
+		<security:intercept-url pattern="\A/addEntity.jsp\?id=.*\Z"
+			access="hasRole('ROLE_ENTITY_UPDATE')" />
+		<!-- CATEGORIA DE ENTIDADE -->
+		<security:intercept-url pattern="/entitycategory.jsp"
+			access="hasRole('ROLE_ENTITYCATEGORY_READ')" />
+		<security:intercept-url pattern="/inclusaodecategoria.jsp"
+			access="hasRole('ROLE_ENTITYCATEGORY_CREATE')" />
+		<security:intercept-url pattern="\A/inclusaodecategoria.jsp\?id=.*\Z"
+			access="hasRole('ROLE_ENTITYCATEGORY_UPDATE')" />
+		<!-- MODELOS DE MENSAGENS -->
+		<security:intercept-url pattern="/messagemodel.jsp"
+			access="hasRole('ROLE_MESSAGEMODEL_READ')" />
+		<security:intercept-url pattern="\A/inclusaoMensagem.jsp\?botao=1\Z"
+			access="hasRole('ROLE_MESSAGEMODEL_CREATE')" />
+		<security:intercept-url pattern="\A/inclusaoMensagem.jsp\?id=.*\Z"
+			access="hasRole('ROLE_MESSAGEMODEL_UPDATE')" />
+		<security:intercept-url pattern="\A/addmessagemodel.jsp\?botao=1\Z"
+			access="hasRole('ROLE_MESSAGEMODEL_CREATE')" />
+		<security:intercept-url pattern="\A/addmessagemodel.jsp\?id=.*\Z"
+			access="hasRole('ROLE_MESSAGEMODEL_UPDATE')" />
+		<security:intercept-url pattern="/messagemodel2.jsp"
+			access="hasRole('ROLE_MESSAGEMODEL_READ')" />
+		<!-- USUÁRIOS -->
+		<security:intercept-url pattern="/user.jsp"
+			access="hasRole('ROLE_USER_READ')" />
+		<security:intercept-url pattern="/addUser.jsp"
+			access="hasRole('ROLE_USER_CREATE')" />
+		<security:intercept-url pattern="\A/addUser.jsp\?botao=2.*\Z"
+			access="hasRole('ROLE_USER_UPDATE')" />
+		<!-- BAIRROS -->
+		<security:intercept-url pattern="/bairros.jsp"
+			access="hasRole('ROLE_NEIGHBORHOOD_READ')" />
+		<security:intercept-url pattern="/addnb.jsp"
+			access="hasRole('ROLE_NEIGHBORHOOD_CREATE')" />
+		<security:intercept-url pattern="\A/addnb.jsp\?id=.*\Z"
+			access="hasRole('ROLE_NEIGHBORHOOD_UPDATE')" />
+		<!-- CIDADÃOS -->
+		<security:intercept-url pattern="/citizen.jsp"
+			access="hasRole('ROLE_CITIZEN_READ')" />
+		<!-- MONITOR DE CHAMADOS -->
+		<security:intercept-url pattern="/callmonitor.jsp"
+			access="hasRole('ROLE_CALLMONITOR_READ')" />
+		<security:intercept-url pattern="/callmonitor2.jsp"
+			access="hasRole('ROLE_CALLMONITOR_READ')" />
+		<!-- CHAMADO INTERNO -->
+		<security:intercept-url pattern="/internalcall.jsp"
+			access="hasRole('ROLE_INTERNALCALL_CREATE')" />
+		<security:intercept-url pattern="\A/internalcallidentification.jsp.*\Z"
+			access="hasRole('ROLE_INTERNALCALL_CREATE')" />
+		<security:intercept-url pattern="\A/addinternalcall.jsp.*\Z"
+			access="hasRole('ROLE_INTERNALCALL_CREATE')" />
+		<!-- MODERAÇÃO DE CHAMADOS -->
+		<security:intercept-url pattern="/call.jsp"
+			access="hasRole('ROLE_CALL_READ')" />
+		<security:intercept-url pattern="/callsHistory.jsp"
+			access="hasRole('ROLE_CALL_READ')" />
+		<security:intercept-url pattern="/editCall.jsp"
+			access="hasRole('ROLE_CALL_UPDATE')" />
+		<security:intercept-url pattern="/replyCall.jsp"
+			access="hasRole('ROLE_CALL_REPLY')" />
+		<!-- ACOMPANHAMENTO DE CHAMADOS -->
+		<security:intercept-url pattern="/callfollow.jsp"
+			access="hasRole('ROLE_FOLLOWCALL_READ')" />
+		<security:intercept-url pattern="/updateCall.jsp"
+			access="hasRole('ROLE_FOLLOWCALL_UPDATE')" />
+		<!-- COMUNICADOS EM MASSA -->
+		<security:intercept-url pattern="/broadcastmessage.jsp"
+			access="hasRole('ROLE_COMMUNICATION_READ')" />
+		<security:intercept-url pattern="/addbroadcast.jsp"
+			access="hasRole('ROLE_COMMUNICATION_CREATE')" />
+		<security:intercept-url pattern="\A/addbroadcast.jsp\?id=.*\Z"
+			access="hasRole('ROLE_COMMUNICATION_UPDATE')" />
+		<!-- PERFIS -->
+		<security:intercept-url pattern="/sup.jsp"
+			access="hasRole('ROLE_PROFILE_READ')" />
+		<security:intercept-url pattern="/addsup.jsp"
+			access="hasRole('ROLE_PROFILE_CREATE')" />
+		<security:intercept-url pattern="\A/addsup.jsp\?id=.*\Z"
+			access="hasRole('ROLE_PROFILE_UPDATE')" />
+		<!-- LOG DE OPERAÇÕES -->
+		<security:intercept-url pattern="/log.jsp"
+			access="hasRole('ROLE_LOG_READ')" />
+		<security:intercept-url pattern="/detailedlog.jsp"
+			access="hasRole('ROLE_LOG_READ')" />
+		<!-- RELATÓRIOS -->
+		<security:intercept-url pattern="/report.jsp"
+			access="hasRole('ROLE_REPORT_READ')" />
+		<security:form-login login-page="/login.jsp"
+			authentication-failure-url="/login.jsp?status=error"
+			default-target-url="/index.jsp" username-parameter="username"
+			password-parameter="password" />
+		<security:logout logout-success-url="/login.jsp" />
+		<security:remember-me token-validity-seconds="1209600"
+			remember-me-parameter="remember-me" data-source-ref="dataSource" />
+		<security:session-management
+			invalid-session-url="/login.jsp" />
+	</security:http>
+
+</beans>

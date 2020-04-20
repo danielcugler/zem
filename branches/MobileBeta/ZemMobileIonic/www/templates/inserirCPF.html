@@ -1,0 +1,21 @@
+<ion-view style="" id="page3" title="Inserir CPF" ng-controller="inserirCPFCtrl">
+    <ion-content class="has-header" padding="true">
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/klgSxXZBSw2E7nYabJck_login-logo.png" height="auto" width="40%">
+        </div>
+        <div style="width: 283px; height: 49px;" class="spacer"></div>
+        <div style="color: rgb(0, 0, 0); text-align: center;" id="inserirCPF-markdown2">
+            <p>Para realizar o seu primeiro acesso ao ZEM é necessário informar seu CPF</p>
+        </div>
+        <form style="" class="list" name="form" novalidate="">
+            <label style="" class="item item-input" ng-class="{'has-error' : form.cpf.$invalid && enviado}">
+                <input placeholder="CPF" type="tel" ng-model="cpf" name="cpf" ng-required="true" ui-br-cpf-mask/>
+                <div class="padding">
+                  <p style="color:red" ng-show="form.cpf.$error.required && enviado ">Este campo é obrigatório</p>
+                </div>
+            </label>
+        </form>
+        <button class="button button-balanced  button-block icon ion-checkmark" id="inserirCPF-button8" ng-click="inserirCpf(cpf, form)"></button>
+        <button class="button button-positive  button-block button-clear" id="inserirCPF-button9" ng-click="showAlertCpf()">Por que informar meu CPF?</button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-view view-title="Título" align-title="center" style="background-color: #6BC5A4;">
+    <ion-nav-buttons side="left">
+        <button class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="!slideIndex">
+            Sair
+        </button>
+        <button class="button button-balanced no-animation" ng-click="previous()" ng-show="slideIndex > 0">
+            Voltar
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-balanced no-animation" ng-click="next()" ng-show="slideIndex != 2">
+            Próximo
+        </button>
+        <button class="button button-balanced no-animation" ng-click="goBackHelp()" ng-show="slideIndex == 2">
+            Sair
+        </button>
+    </ion-nav-buttons>
+    <ion-slide-box on-slide-changed="slideChanged(index)">
+        <ion-slide>
+            <img src="img/tutorial/MINHASMENSAGENS.png" class="fullscreen-image fullscreen-imageHelp">
+        </ion-slide>
+        <ion-slide>
+            <img src="img/tutorial/MINHASMENSAGENS.png" class="fullscreen-image fullscreen-imageHelp">
+        </ion-slide>
+        <ion-slide>
+            <img src="img/tutorial/MINHASMENSAGENS.png" class="fullscreen-image fullscreen-imageHelp">
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>

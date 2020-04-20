@@ -1,0 +1,69 @@
+<ion-view title="Filtro" id="page25" class=" ">
+    <ion-content padding="true" class="has-header">
+        <form id="filtro-form1" class="list ">
+            <ion-list id="filtro-list3" class=" ">
+                <ion-item id="filtro-list-item5" class="  ">Chamados &gt; Filtros</ion-item>
+                <label class="item item-input " id="filtro-input1">
+                    <span class="input-label">Data Inicial</span>
+                    <input type="date" placeholder="" ng-model="filter.periodoa">
+                </label>
+                <label class="item item-input " id="filtro-input2">
+                    <span class="input-label">Data Final</span>
+                    <input type="date" placeholder="" ng-model="filter.periodod">
+                </label>
+            <div class="spacer" style="height: 40px;"></div>
+          <!--
+            <label class="item item-select " id="filtro-select1" >
+                <span class="input-label">Status</span>
+                <select ng-model="filter.callProgress">
+                    <option  value="z" ng-selected="z">Selecione o Status</option>
+                    <option ng-repeat="callProgress in callProgressl" value="{{$index}}">{{callProgress}}</option>                     
+                </select>
+            </label>            
+            <label class="item item-select " id="filtro-select3"  >
+                <span class="input-label">Entidade</span>
+                <select ng-model="filter.entityId" ng-options="entity.entityId as entity.name for entity in entities">
+                 <option  value="">Selecione a Entidade</option> 
+                 </select>
+            </label>
+            <label class="item item-select " id="filtro-select4" >
+                <span class="input-label">Categoria</span>
+                <select ng-model="filter.entityCategoryId" ng-options="entityCategory.entityCategoryId as entityCategory.name for entityCategory in entityCategories">
+            <option  value="">Selecione a Categoria</option> 
+           </select>
+            </label>
+            -->
+       <!--
+              <ion-list class=" " id="registrarChamado3-list10" ng-repeat="entity in entities">
+            <ion-item class="item-stable"
+                    ng-click="toggleGroup(entity)"
+                    ng-class="{active: isGroupShown(entity)}">
+              <i class="icon" ng-class="isGroupShown(entity) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+   {{entity.name}}
+          </ion-item>
+                    <ion-item class="item-accordion"
+                    ng-repeat="entityCategory in entity.entityCategoryCollection"
+                    ng-show="isGroupShown(entity)" ng-click="next(entity,entityCategory)">
+            {{entityCategory.name}}            
+          </ion-item>
+        </ion-list>
+        
+            <label class="item item-input " id="filtro-input3">
+                <span class="input-label">Termo da Descrição</span>
+                <input type="text" placeholder="" ng-model="filter.description">
+            </label>
+        -->
+            <div id="filtro-button-bar1" class=" button-bar ">
+                <button id="filtro-button3" class=" button button-positive  button-block" ng-click="clean()">Limpar</button>
+                <button id="filtro-button5" class=" button button-positive  button-block " ng-click="showFilter()">Aplicar</button>
+            </div>
+        </form>
+        <ion-list ng-repeat="call in citizenCalls">
+            <ion-item ng-click="next(call)">{{call.parentCallId.unsolvedCallId || call.unsolvedCallId || call.parentCallId.solvedCallId || call.solvedCallId}} : {{call.entityEntityCategoryMaps.entity.name}} - {{call.parentCallId.creationOrUpdateDate || call.creationOrUpdateDate}}</ion-item>
+        </ion-list>
+        <ion-list ng-repeat="call in citizenCalls2">
+            <ion-item ng-click="next(call)">{{call.parentCallId.unsolvedCallId || call.unsolvedCallId || call.parentCallId.solvedCallId || call.solvedCallId}} : {{call.entityEntityCategoryMaps.entity.name}} - {{call.parentCallId.creationOrUpdateDate || call.creationOrUpdateDate}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

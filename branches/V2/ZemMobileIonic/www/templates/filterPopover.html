@@ -1,0 +1,30 @@
+<style>
+.popover {
+    height: 230px;
+    width: 80%;
+}
+</style>
+<ion-popover-view>
+    <ion-header-bar>
+        <h1 class="title">Filtro</h1>
+    </ion-header-bar>
+    <ion-content>
+        <!-- Filtros -->
+        <div style="padding: 3%;">
+            <ion-list id="filtro-list3">
+                <label class="item item-input" id="filtro-input1" margin="auto">
+                    <span class="input-label center">Data Inicial</span>
+                    <input type="date" placeholder="" ng-model="filter.periodoa">
+                </label>
+                <label class="item item-input " id="filtro-input2" margin="auto">
+                    <span class="input-label">Data Final</span>
+                    <input type="date" placeholder="" ng-model="filter.periodod">
+                </label>
+            </ion-list>
+            <div id="filtro-button-bar1" class="button-bar">
+                <button id="filtro-button3" class="button button-zem button-block" ng-click="clean()">Limpar</button>
+                <button id="filtro-button5" class="button button-zem button-block" ng-click="showFilter()">Filtrar</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-popover-view>

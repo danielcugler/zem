@@ -1,0 +1,27 @@
+<ion-view style="" class=" " id="page13" title="Zeladoria Municipal" hide-nav-bar="false">
+    <ion-content class="has-header c-center " padding="true">
+        <div class="spacer" style="height: 15px;"></div>
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto; margin-bot: 15px;" src="img/logo-ZEM.svg" height="auto"
+                width="50%">
+        </div>
+        <div class="spacer" style="height: 15px;"></div>
+        <div>
+            <div class="card" style="margin-top: 0px; margin-bottom: 0px;">
+                <div class="item" style="text-align: center;">
+                    Qual cidade você deseja utilizar o ZEM?
+                </div>
+                <div class="item" style="text-align: center;" ng-click="selecionarCidade()">
+                    {{ selectedCity.name || 'Selecione uma cidade'}}
+                </div>
+            </div>
+            <div class="row">
+                <!-- <button class="button button-balanced  button-block ion-checkmark" ng-click="getIpServer(selectState.name, selectCity.name)"></button> -->
+                <button class="button button-balanced  button-block ion-checkmark" ng-click="getIpServer(selectedCity)"></button>
+            </div>
+            <!-- <div class="row">
+                <button class=" button button-positive  button-block button-clear " ng-click="">Sua cidade ainda não possui o ZEM?</button>
+            </div> -->
+        </div>
+    </ion-content>
+</ion-view>

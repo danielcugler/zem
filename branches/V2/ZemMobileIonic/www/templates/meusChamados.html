@@ -1,0 +1,123 @@
+<ion-view title="ZEM" class="">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/meusChamados01.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+                <ion-slide>
+                    <img src="img/tutorial/meusChamados02.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button button-balanced button-clear" ng-click="exibirFiltros()">
+                <i class="icon ion-funnel" style="color: #ffffff; height: 80%"></i>
+            </button>
+            <button align="right" class="button button-balanced button-clear" ng-click="update()">
+                <i class="icon ion-ios-loop-strong" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+        <h1 class="title">Chamados</h1>
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button button-balanced button-clear" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <!-- Filtros -->
+        <form id="filtro-form1" class="list" ng-show="filtros" style="padding: 0;">
+            <div class="card" style="margin-top: 0; margin-bottom: 0;">
+                <label class="item item-input item-select" id="filtro-input4" margin="auto">
+                    <span class="input-label">Andamento</span>
+                    <select ng-model="filter.callProgress">
+                        <option value="0">Novo</option>
+                        <option value="1">Encaminhado</option>
+                        <option value="2">Processado</option>
+                        <option value="3">Finalizado</option>
+                        <option value="4">Visualizado</option>
+                        <option value="5">Em Andamento</option>
+                        <option value="6">Rejeitado</option>
+                    </select>
+                </label>
+                <label class="item item-input" id="filtro-input1" margin="auto">
+                    <span class="input-label center">Data Inicial</span>
+                    <input type="date" placeholder="" ng-model="filter.periodoa" value="">
+                </label>
+                <label class="item item-input " id="filtro-input2" margin="auto">
+                    <span class="input-label">Data Final</span>
+                    <input type="date" placeholder="" ng-model="filter.periodod" value="">
+                </label>
+                <label class="item item-input item-select" id="filtro-input3" margin="auto">
+                    <span class="input-label">Entidade</span>
+                    <select ng-options="entity.entityId as entity.name for entity in entities" ng-model="filter.entityId">
+                    </select>
+                </label>
+                <div id="filtro-button-bar1" class="button-bar" style="padding: 0px 5%;">
+                    <button id="filtro-button3" class="button button-balanced button-block" ng-click="clean();exibirFiltros();">Limpar</button>
+                    <button id="filtro-button5" class="button button-balanced button-block" ng-click="showFilter();exibirFiltros();">Filtrar</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Card que informa que não há chamados -->
+        <div class="card" ng-hide="cardNoCall">
+            <div class="item item-text-wrap" style="text-align: center">
+                Você não possui chamados.
+            </div>
+        </div>
+
+        <!-- Exibindo os chamados -->
+        <ion-list ng-repeat="call in citizenCallsUnsolved" can-swipe="true">
+            <ion-item ng-click="nextU(call)" ng-class="{'bold': isReadUnsolved(call.parentCallId.unsolvedCallId)}">
+                <i class="item-icon-left">
+                    <i class="icon">
+                        <img ng-if="call.callProgress === 'Novo'" src="img/img-novo.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Encaminhado'" src="img/img-encaminhado.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Visualizado'" src="img/img-visualizado.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Em Andamento'" src="img/img-andamento.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Processado'" src="img/img-processado.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Rejeitado'" src="img/img-rejeitado.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Finalizado'" src="img/img-finalizado.png" style="height: 50%">
+                    </i> {{call.parentCallId.unsolvedCallId || call.unsolvedCallId || call.parentCallId.solvedCallId
+                || call.solvedCallId}} : {{call.entityEntityCategoryMaps.entity.name}} - {{call.parentCallId.creationOrUpdateDate
+                || call.creationOrUpdateDate}}
+                <!-- Arastar para excluir -->
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteCitizen(call.parentCallId.unsolvedCallId || call.unsolvedCallId)"></ion-option-button>
+                </i>
+            </ion-item>
+        </ion-list>
+        <ion-list ng-repeat="call in citizenCallsSolved" can-swipe="true">
+            <ion-item ng-click="nextS(call)" ng-class="{'bold': isReadSolved(call.parentCallId.unsolvedCallId)}">
+                <i class="item-icon-left">
+                    <i class="icon">
+                        <img ng-if="call.callProgress === 'Finalizado'" src="img/img-finalizado.png" style="height: 50%">
+                    </i>
+                <i class="icon">
+                        <img ng-if="call.callProgress === 'Rejeitado'" src="img/img-rejeitado.png" style="height: 50%">
+                    </i> {{call.parentCallId.unsolvedCallId || call.unsolvedCallId || call.parentCallId.solvedCallId
+                || call.solvedCallId}} : {{call.entityEntityCategoryMaps.entity.name}} - {{call.parentCallId.creationOrUpdateDate
+                || call.creationOrUpdateDate}}
+                <!-- Arastar para excluir -->
+                <ion-option-button class="button-assertive icon ion-trash-a" ng-click="deleteCitizen(call.parentCallId.unsolvedCallId || call.solvedCallId)"></ion-option-button>
+                </i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view title="ZEM">
+    <script id="helpRC01.html" type="text/ng-template">
+        <div class="modal image-modal" style="background-color: #6BC5A4;" ng-click="closeModal()">
+            <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true" active-slide="activeSlide">
+                <ion-slide>
+                    <img src="img/tutorial/registrarChamado07.png" class="fullscreen-image fullscreen-imageHelp" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </script>
+    <!-- Subbarra com botões -->
+    <!-- box-shadow: 0px 0px 1px #424242; -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="h1 title fix-title-header-iphone" style="position: relative; height: 100%;">Detalhamento do Chamado</div>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <!--<div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>-->
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <form id="chamados-form2" class="list ">
+            <div class="card">
+                <div class="item item-text-wrap" style="text-align: center;">
+                    <strong>Chamado cadastrado com sucesso.</strong>
+                </div>
+            </div>
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <strong>Status: </strong>{{unsolvedCall.callProgress}}
+                    <br>
+                    <strong>Data de Abertura: </strong>{{unsolvedCall.creationOrUpdateDate}}
+                    <br>
+                    <strong>Tipo: </strong>{{unsolvedCall.callClassificationId.name}}
+                    <br>
+                    <strong>Entidade/Categoria: </strong>{{unsolvedCall.entityEntityCategoryMaps.entity.name}} - {{unsolvedCall.entityEntityCategoryMaps.entityCategory.name}}
+                    <br>
+                    <strong>Local: </strong>{{unsolvedCall.addressId.streetName}}, {{unsolvedCall.addressId.addressNumber}} - {{unsolvedCall.addressId.neighborhoodId.name}}
+                    <br>
+                    <strong>Descrição: </strong>{{unsolvedCall.description.information}}
+                    <br>
+                </div>
+            </div>
+            <button class=" button button-balanced button-block" id="retornarMenuInicial" ng-click="returnMenu()">Retornar para o Menu Inicial</button>
+        </form>
+        <img ng-src="data:image/png;charset=utf-8;base64,{{photos[0]}}" />
+    </ion-content>
+</ion-view>

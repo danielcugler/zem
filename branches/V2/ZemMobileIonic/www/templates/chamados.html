@@ -1,0 +1,43 @@
+<ion-view title="ZEM" id="page6" class="">
+    <!-- Subbarra com botões -->
+    <!-- box-shadow: 0px 0px 1px #424242; -->
+    <ion-header-bar class="bar-subheader bar-subHeadZem">
+        <div class="h1 title" style="position: relative; height: 100%;">Meus Chamados</div>
+        <!-- <h1 class="title">Meus chamados</h1> -->
+        <div class="button" style="background-color: #98D4BB">
+            <button align="right" class="button" style="background-color: #98D4BB; position: relative; height: 100%;" ng-click="buttonHelp()">
+                <i class="icon ion-help" style="color: #ffffff; height: 80%"></i>
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content padding="true" class="has-header" ng-controller="image-popoverCtrl">
+        <form id="chamados-form2" class="list ">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <strong>Status: </strong>{{unsolvedCall.callProgress}}
+                    <br>
+                    <strong>Data de Abertura: </strong>{{unsolvedCall.creationOrUpdateDate}}
+                    <br>
+                    <strong>Tipo: </strong>{{unsolvedCall.callClassificationId.name}}
+                    <br>
+                    <strong>Para: </strong>{{unsolvedCall.entityEntityCategoryMaps.entity.name}} - {{unsolvedCall.entityEntityCategoryMaps.entityCategory.name}}
+                    <br>
+                    <strong>Local: </strong>{{unsolvedCall.addressId.streetName}}, {{unsolvedCall.addressId.addressNumber}} - {{unsolvedCall.addressId.neighborhoodId.name}}
+                    <br>
+                    <strong>Descrição: </strong>{{unsolvedCall.description.information}}
+                    <br>
+                </div>
+            </div>
+            <div class="card" ng-show="varShowImages">
+                <div align="center">
+                    <a class="item item-list-detail">
+                        <ion-scroll direction="x">
+                            <img ng-repeat="image in photos" ng-src="{{image}}" ng-click="showImages($index)" class="image-list-thumb" />
+                        </ion-scroll>
+                    </a>
+                </div>
+            </div>
+            <button class="button button-balanced button-block" id="buttonVerResposta" ng-show="unsolvedCall.callProgress == 'Finalizado'" ng-click="verResposta()">Ver Resposta</button>
+        </form>
+    </ion-content>
+</ion-view>

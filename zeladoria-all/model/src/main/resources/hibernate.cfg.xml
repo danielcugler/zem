@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<!-- <property name="hibernate.connection.url" >jdbc:postgresql://192.168.1.200:5432/zup</property> 
+			<property name="hibernate.connection.username" >labitec</property> <property 
+			name="hibernate.connection.password" >L4b1t3cDB</property> <property name="hibernate.connection.url" 
+			>jdbc:postgresql://localhost:5432/zup</property> <property name="hibernate.connection.username" 
+			>postgres</property> <property name="hibernate.connection.password" >L4b1t3cDB</property> -->
+
+		<property name="hibernate.connection.url">jdbc:postgresql://192.168.4.100:5432/zem</property>
+
+		<!-- <property name="hibernate.connection.url" >jdbc:postgresql://191.252.81.80:5432/zup</property> 
+			<property name="hibernate.connection.url" >jdbc:postgresql://10.70.6.6:5432/zup</property> 
+			<property name="hibernate.connection.url" >jdbc:postgresql://192.168.4.100:5432/zup</property> 
+			<property name="hibernate.connection.url" >jdbc:postgresql://localhost:5432/zup</property> -->
+		<property name="hibernate.connection.username">postgres</property>
+		<!-- <property name="hibernate.connection.password">postgres</property> -->
+		<property name="hibernate.connection.password">L4b1t3cDB</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="hibernate.connection.autocommit">true</property>
+
+		<!-- Use the C3P0 connection pool. -->
+		<!--  
+		<property name="c3p0.min_size">3</property>
+		<property name="c3p0.max_size">5</property>
+		<property name="c3p0.timeout">1800</property>
+		<property name="c3p0.acquire_increment">1</property>
+		<property name="c3p0.max_statements">50</property>
+	-->
+		<!-- dbcp connection pool configuration -->
+		   
+		 <property name="hibernate.dbcp.initialSize">5</property> <property 
+			name="hibernate.dbcp.maxTotal">20</property> <property name="hibernate.dbcp.maxIdle">10</property> 
+			<property name="hibernate.dbcp.minIdle">5</property> <property name="hibernate.dbcp.maxWaitMillis">-1</property> 
+
+		<!-- BONECP -->
+<!--  
+		 <property name="bonecp.idleMaxAge">240</property> <property name="bonecp.idleConnectionTestPeriod">60</property> 
+			<property name="bonecp.partitionCount">3</property> <property name="bonecp.acquireIncrement">10</property> 
+			<property name="bonecp.maxConnectionsPerPartition">60</property> <property 
+			name="bonecp.minConnectionsPerPartition">20</property> <property name="bonecp.statementsCacheSize">50</property> 
+			<property name="bonecp.releaseHelperThreads">3</property> 
+-->
+
+  <!-- Hikari specific properties -->
+  <!-- 
+    <property name="connection.provider_class">com.zaxxer.hikari.hibernate.HikariConnectionProvider</property>
+  <property name="hikari.dataSource.cachePrepStmts">true</property>
+  <property name="hikari.dataSource.prepStmtCacheSize">250</property>
+  <property name="hikari.dataSource.prepStmtCacheSqlLimit">2048</property>
+  <property name="hikari.dataSource.useServerPrepStmts">true</property>
+  <property name="hikari.maximumPoolSize">30</property>
+  <property name="hikari.idleTimeout">30000</property>
+-->
+		<!-- Disable second-level cache. -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider </property>
+		<property name="cache.use_query_cache">false</property>
+		<property name="cache.use_minimal_puts">false</property>
+		<property name="max_fetch_depth">3</property>
+		<!-- outras configurações -->
+<!-- 
+		<property name="hibernate.generate_statistics">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.use_sql_comments">true</property>
+	-->
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.event.merge.entity_copy_observer"> allow</property>
+		<!-- mapping classes -->
+		 
+		<mapping class="zup.bean.BroadcastMessage" />
+		<mapping class="zup.bean.BroadcastMessageCategory" />
+		<mapping class="zup.bean.CallClassification" />
+		<mapping class="zup.bean.Citizen" />
+		<mapping class="zup.bean.Entity" />
+		<mapping class="zup.bean.Firebase" />
+		<mapping class="zup.bean.EntityCategory" />
+		<mapping class="zup.bean.Media" />
+		<mapping class="zup.bean.MessageModel" />
+		<mapping class="zup.bean.Neighborhood" />
+		<mapping class="zup.bean.SolvedCall" />
+		<mapping class="zup.bean.SystemParameter" />
+		<mapping class="zup.bean.SystemUser" />
+		<mapping class="zup.bean.SystemUserProfile" />
+		<mapping class="zup.bean.SystemUserProfilePermission" />
+		<mapping class="zup.bean.UnsolvedCall" />
+		<mapping class="zup.bean.WebUser" />
+		<mapping class="zup.bean.UnreadCall" />
+		<mapping class="zup.bean.AttendanceTime" />
+		<mapping class="zup.bean.Log" />
+		<mapping class="zup.bean.CitizenLogin" />
+		<mapping class="zup.bean.City" />
+		<mapping class="zup.bean.State" />
+		<mapping class="zup.bean.EntityEntityCategoryMaps" />
+		<mapping class="zup.bean.Address" />
+		<mapping class="zup.bean.AdditionalInformation" />
+    
+    </session-factory>
+</hibernate-configuration>
