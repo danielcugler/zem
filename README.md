@@ -23,7 +23,8 @@ Os códigos fontes necessários estão disponíveis em:
 - [(C) Projeto Mobile](https://github.com/danielcugler/zem/tree/master/branches/V2/ZemMobileIonic)
 - [(D) Script do banco de dados do projeto Web Principal](https://github.com/danielcugler/zem/blob/master/branches/Database%20Generator/FullBackup.sql)
 
-
+## Resumo
+Cidadãos podem utilizar tanto a app mobile quanto o módulo web para abrir chamados. Tanto o módulo web quanto app mobile contactam o web service (B) para saber qual o IP do servidor que roda o projeto Web principal. 
 
 
 ## PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
@@ -65,13 +66,11 @@ crontab -e (vai abrir no editor). Na última linha do arquivo aberto adicionar:
 Pronto! Para testar se o serviço subiu no startup, reiniciar o servidor e abrir um browser no endereco: "IP_SERVIDOR:9000"
 
 
-INSTALANDO O POSTGRES
-=====================
+## INSTALANDO O POSTGRES
 sudo apt-get install postgresql (usei o postgres 10 nos testes)
 
 
-RESTAURANDO O BANCO DE DADOS DO MÓDULO WEB DA PREFEITURA (A)
-========================================================
+## RESTAURANDO O BANCO DE DADOS DO MÓDULO WEB DA PREFEITURA (A)
 - No Postgresql, criar um banco vazio chamado "zem". Utilizar o o script "FullBackup.sql", em (D).
 O arquivo está com encoding ANSI. No linux ele dá erro ao abrir. Para resolver o problema, pode-se abrir o arquivo no bloco de notas do windows e escolher "salvar como" - neste momento, é possivel selecionar o encoding - escolher UTF8.
 
@@ -79,8 +78,7 @@ Para restaurar o backup, por conta do arquivo ser grande, se tentar utilizar o p
 sudo su postgres
 psql -U postgres -d zem --set ON_ERROR_STOP=on -f ~/Desktop/FullBackupUTF.sql 
 
-Instalando o web service central das cidades (B)
-============================================
+## Instalando o web service central das cidades (B)
 Instalado o Tomcat/9.0.22
 
 Usando o seguinte tutorial: https://www.digitalocean.com/community/tutorials/install-tomcat-9-ubuntu-1804
@@ -120,8 +118,7 @@ Compilar o projeto. Entrar no diretorio raiz do projeto e executar: mvn clean in
 - Acessar o banco zem-ws-central (via pgadmin) e adicionar manualmente dados para as tabelas
 
 
-INSTALANDO O JETTY 9 (PORTA 8080) - RODA O MODULO WEB PRINCIPAL DA PREFEITURA
-====================
+## INSTALANDO O JETTY 9 (PORTA 8080) - RODA O MODULO WEB PRINCIPAL DA PREFEITURA
 sudo apt-get install jetty9
 
 Configurar o carregamento automatico do jetty:
@@ -131,8 +128,7 @@ crontab -e (vai abrir no editor). Na última linha do arquivo aberto adicionar:
 
 
 
-INSTALANDO O SISTEMA WEB PRINCIPAL - MODULO PREFEITURA (JETTY - PORTA 80)
-======================================================
+## INSTALANDO O SISTEMA WEB PRINCIPAL - MODULO PREFEITURA (JETTY - PORTA 80)
 
 Fazer download do código fonte em (A) - zeladoria-all"
 
@@ -175,8 +171,7 @@ Configurar os dados de acesso ao banco que já foi criado, "zem". Apontar para "
 Pronto! Acessar o endereco: localhost:8080/login.jsp (outra opcao é /identification.jsp) - logar com o usuario "root" e senha "123456ab".
 
 
-Instalando a app mobile (ionic)
-==============================
+## Instalando a app mobile (ionic)
 Fazer download do código fonte em (B).
 
 Tutorial de instalação ainda não definido.
