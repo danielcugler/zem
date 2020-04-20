@@ -16,6 +16,10 @@ O sistema encontra-se em estado funcional, no entanto, existem *bugs* que precis
 
 O projeto foi desenvolvido entre 2014 e 2017 no [LabITec - Laboratório de Inovação em Tecnologia](http://dgp.cnpq.br/dgp/espelhogrupo/2467609651791807). 
 
+Pesquisadores estão convidados a dar prosseguimento no projeto. 
+
+Para maiores informações contactar danielcugler at gmail dot com
+
 
 
 
@@ -23,7 +27,7 @@ O projeto foi desenvolvido entre 2014 e 2017 no [LabITec - Laboratório de Inova
 
 Não há um manual de instalação completo e totalmente validado neste momento, no entanto, existe um conjunto de instruções (disponíveis a seguir) para auxiliar no processo de instalação.
 
-Os códigos fontes necessários estão disponíveis em:
+## Códigos-fonte
 
 - [(A) Projeto Web principal](https://github.com/danielcugler/zem/tree/master/zeladoria-all)
 - [(B) Projeto Web Service - Hub direcionador de Cidades/IPs](https://github.com/danielcugler/zem/tree/master/branches/admin)
@@ -34,10 +38,11 @@ Os códigos fontes necessários estão disponíveis em:
 Cidadãos podem utilizar tanto a app mobile quanto o módulo web para abrir chamados. Tanto o módulo web quanto app mobile contactam o web service (B) para saber qual o IP do servidor que roda o projeto Web principal. 
 
 
-## PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
+## Portas utilizadas
 80, 8080, 8081, 22, 5432, 9000, 587 e 25  
 
-## Instalando o MINIO ([download aqui](https://min.io/))
+## Instalando o MINIO 
+([download aqui](https://min.io/))
 sudo mkdir /minio
 sudo chmod 777 /minio
 cd /minio
@@ -73,11 +78,11 @@ crontab -e (vai abrir no editor). Na última linha do arquivo aberto adicionar:
 Pronto! Para testar se o serviço subiu no startup, reiniciar o servidor e abrir um browser no endereco: "IP_SERVIDOR:9000"
 
 
-## INSTALANDO O POSTGRES
+## Instalando o Postgres
 sudo apt-get install postgresql (usei o postgres 10 nos testes)
 
 
-## RESTAURANDO O BANCO DE DADOS DO MÓDULO WEB DA PREFEITURA (A)
+## Restaurando o banco de dados do módulo web da prefeitura (A)
 - No Postgresql, criar um banco vazio chamado "zem". Utilizar o o script "FullBackup.sql", em (D).
 O arquivo está com encoding ANSI. No linux ele dá erro ao abrir. Para resolver o problema, pode-se abrir o arquivo no bloco de notas do windows e escolher "salvar como" - neste momento, é possivel selecionar o encoding - escolher UTF8.
 
@@ -125,7 +130,7 @@ Compilar o projeto. Entrar no diretorio raiz do projeto e executar: mvn clean in
 - Acessar o banco zem-ws-central (via pgadmin) e adicionar manualmente dados para as tabelas
 
 
-## INSTALANDO O JETTY 9 (PORTA 8080) - RODA O MODULO WEB PRINCIPAL DA PREFEITURA
+## Instalando o Jetty 9 (PORTA 8080)
 sudo apt-get install jetty9
 
 Configurar o carregamento automatico do jetty:
@@ -135,7 +140,7 @@ crontab -e (vai abrir no editor). Na última linha do arquivo aberto adicionar:
 
 
 
-## INSTALANDO O SISTEMA WEB PRINCIPAL - MODULO PREFEITURA (JETTY - PORTA 80)
+## Instalando o sistema web principal - Módulo prefeitura (JETTY - PORTA 80)
 
 Fazer download do código fonte em (A) - zeladoria-all"
 
