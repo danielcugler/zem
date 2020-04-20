@@ -14,7 +14,7 @@ O código fonte do projeto pode ser utilizado desde que sejam seguidas as normas
 
 O sistema encontra-se em estado funcional, no entanto, existem *bugs* que precisam ser solucionados.
 
-O projeto foi desenvolvido entre 2014 e 2017 no [LabITec - Laboratório de Inovação em Tecnologia](dgp.cnpq.br/dgp/espelhogrupo/2467609651791807). 
+O projeto foi desenvolvido entre 2014 e 2017 no [LabITec - Laboratório de Inovação em Tecnologia](http://dgp.cnpq.br/dgp/espelhogrupo/2467609651791807). 
 
 
 
