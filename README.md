@@ -41,8 +41,10 @@ Cidadãos podem utilizar tanto a app mobile quanto o módulo web para abrir cham
 ## Portas utilizadas
 80, 8080, 8081, 22, 5432, 9000, 587 e 25  
 
-## Instalando o MINIO 
+## Instalando o MINIO 4
+
 ([download aqui](https://min.io/))
+
 sudo mkdir /minio
 sudo chmod 777 /minio
 cd /minio
