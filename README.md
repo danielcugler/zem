@@ -8,33 +8,28 @@
 
 **Coordenador do Projeto** : Daniel Cintra Cugler
 
-Este projeto foi co-coordenado pelas pesquisadoras Jaqueline Aparecida Jorge Papini Soares e Lídia Bononi Paiva Tomaz, no IFTM, Instituto Federal do Triângulo Mineiro, * *campus* * Patrocínio/MG.
+Este projeto foi co-coordenado pelas pesquisadoras Jaqueline Aparecida Jorge Papini Soares e Lídia Bononi Paiva Tomaz, no IFTM, Instituto Federal do Triângulo Mineiro, *campus* Patrocínio/MG.
 
-O código fonte do projeto pode ser utilizado desde que sejam seguidas todas as normas do CNPq ([vide edital](Edital-ChamadaCNPq-SETEC-MEC-17-2014.pdf))
+O código fonte do projeto pode ser utilizado desde que sejam seguidas as normas do CNPq ([vide edital](Edital-ChamadaCNPq-SETEC-MEC-17-2014.pdf))
 
-O sistema encontra-se em estado funcional, no entanto, existem * *bugs* * que precisam ser solucionados.
+O sistema encontra-se em estado funcional, no entanto, existem *bugs* que precisam ser solucionados.
 
 Não há um manual de instalação completo e totalmente validado neste momento, no entanto, existe um conjunto de instruções (disponíveis a seguir) para auxiliar no processo de instalação.
 
 Os códigos fontes necessários estão disponíveis em:
 
 - [(A) Projeto Web principal](https://github.com/danielcugler/zem/tree/master/zeladoria-all)
-- [(B) Projeto Web Service - Hub direcionador de Cidade/IPs]https://github.com/danielcugler/zem/tree/master/branches/admin)
+- [(B) Projeto Web Service - Hub direcionador de Cidades/IPs](https://github.com/danielcugler/zem/tree/master/branches/admin)
 - [(C) Projeto Mobile](https://github.com/danielcugler/zem/tree/master/branches/V2/ZemMobileIonic)
 - [(D) Script do banco de dados do projeto Web Principal](https://github.com/danielcugler/zem/blob/master/branches/Database%20Generator/FullBackup.sql)
 
 
-- Servidor de imagens Minio
-- Servidor de aplicação Jetty
-- Banco de dados Postgres
 
 
-PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
-===============================================
+##PORTAS QUE PRECISAM ESTAR LIBERADAS NO SERVIDOR
 80, 8080, 8081, 22, 5432, 9000, 587 e 25  
 
-Instalando o MINIO ([download here](https://min.io/))
-==================
+##Instalando o MINIO ([download here](https://min.io/))
 sudo mkdir /minio
 sudo chmod 777 /minio
 cd /minio
